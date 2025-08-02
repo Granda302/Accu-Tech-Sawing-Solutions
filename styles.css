@@ -16,20 +16,31 @@ body {
 
 /* Hero Section */
 .hero {
-  background-color: #1a3c64; /* Indotech blue */
+  background: url('https://indotechgroup.in/wp-content/uploads/2023/09/AV18-3.jpg') no-repeat center center/cover;
   color: white;
   padding: 100px 20px;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 60, 100, 0.75); /* blue overlay for readability */
+  z-index: 0;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-btn {
@@ -117,4 +128,38 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
+}.
+navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #1a3c64;
+  color: white;
+  padding: 15px 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+body {
+  padding-top: 70px; /* to prevent navbar from
