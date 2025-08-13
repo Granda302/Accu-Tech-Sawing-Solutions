@@ -1,165 +1,110 @@
-/* Reset + Fonts */
-body {
+/* Reset & Base Styles */
+* {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.6;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
   color: #333;
-  background-color: #f5f5f5;
+  line-height: 1.6;
 }
 
-/* Containers */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* Hero Section */
-.hero {
-  background: url('https://indotechgroup.in/wp-content/uploads/2023/09/AV18-3.jpg') no-repeat center center/cover;
+/* Header */
+header {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Bandsaw_example.jpg') no-repeat center center/cover;
+  height: 250px;
   color: white;
-  padding: 100px 20px;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(26, 60, 100, 0.75); /* blue overlay for readability */
-  z-index: 0;
-}
-
-.hero .container {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-btn {
-  display: inline-block;
-  background-color: #f0c000;
-  color: #000;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-/* Products */
-.products h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.product-grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.product {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  padding: 20px;
-  max-width: 300px;
-  text-align: center;
-}
-
-.product img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 15px;
-}
-
-/* Contact */
-.contact {
-  background-color: #e6ebef;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.contact h2 {
-  margin-bottom: 20px;
-}
-
-.contact form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  max-width: 500px;
-  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
 }
 
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-.contact button {
-  background-color: #1a3c64;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 5px;
+header h1 {
+  font-size: 2.5rem;
   font-weight: bold;
-  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+header nav {
+  margin-top: 15px;
+}
+
+header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #FFD700;
+}
+
+/* Products Section */
+.products {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.products h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #004080;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+.product-info p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
 }
 
 /* Footer */
 footer {
-  background-color: #1a3c64;
+  background: #004080;
   color: white;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-}.
-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #1a3c64;
-  color: white;
   padding: 15px 0;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 40px;
+  font-size: 0.9rem;
 }
-
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar .logo {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: white;
-  text-decoration: none;
-}
-
-.navbar .nav-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
-}
-
-body {
-  padding-top: 70px; /* to prevent navbar from
