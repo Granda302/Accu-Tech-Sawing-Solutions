@@ -4,45 +4,199 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accu-Tech Sawing Solutions</title>
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="Accu-Tech Sawing Solutions — Sales, installation, and service for Indotech bandsaws." />
+  <meta name="description" content="Accu-Tech Sawing Solutions — Sales, installation, preventative maintenance, and service for Indotech bandsaws." />
+  <style>
+    /* =========================
+       Brand + Base
+    ========================== */
+    :root{
+      --navy:#122e4d;
+      --navy-2:#0f2a44;
+      --ink:#1b2430;
+      --ink-2:#2e3b4a;
+      --cloud:#f6f8fb;
+      --card:#ffffff;
+      --line:#e7edf6;
+      --accent:#f0c000; /* warm gold CTA */
+      --accent-2:#ffb800;
+      --link:#0c64d6;
+      --success:#22a06b;
+      --shadow: 0 8px 24px rgba(18,46,77,.12);
+      --shadow-lg: 0 14px 36px rgba(18,46,77,.18);
+      --radius:14px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      color:var(--ink); background:var(--cloud);
+    }
+    img{max-width:100%; display:block}
+
+    .container{max-width:1200px; margin:0 auto; padding:0 20px}
+
+    /* =========================
+       Header / Nav (Dropdowns)
+    ========================== */
+    .site-header{
+      position:sticky; top:0; z-index:1000; background:var(--navy); color:#fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    }
+    .header-inner{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0}
+    .brand{
+      color:#fff; text-decoration:none; font-weight:800; letter-spacing:.3px;
+      display:flex; align-items:center; gap:10px; font-size:1.05rem;
+    }
+    .brand .dot{width:10px; height:10px; background:var(--accent); border-radius:50%}
+
+    .nav{display:flex; align-items:center; gap:18px}
+    .nav-toggle{
+      display:none; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.4);
+      padding:6px 10px; border-radius:8px; font-size:1rem;
+    }
+
+    .dropdown{position:relative}
+    .dropbtn{
+      background:transparent; color:#fff; border:none; padding:8px 10px; cursor:pointer; border-radius:8px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .dropbtn:hover{background:rgba(255,255,255,.12)}
+    .dropdown-content{
+      position:absolute; top:100%; left:0; min-width:220px; display:none; overflow:hidden;
+      background:#fff; border-radius:12px; box-shadow:var(--shadow);
+    }
+    .dropdown:hover .dropdown-content{display:block}
+    .dropdown-content a{
+      display:block; padding:11px 14px; color:var(--navy); text-decoration:none; font-weight:700;
+    }
+    .dropdown-content a:hover{background:#eef3fa}
+
+    /* =========================
+       Hero
+    ========================== */
+    .hero{
+      background:
+        linear-gradient( to bottom right, rgba(18,46,77,.92), rgba(18,46,77,.78) ),
+        url('https://indotechgroup.in/wp-content/uploads/2023/09/AV18-3.jpg') center/cover no-repeat;
+      color:#fff;
+    }
+    .hero-inner{padding:84px 0; text-align:center}
+    .hero h1{margin:0 0 10px; font-size: clamp(1.6rem, 3.6vw, 2.6rem)}
+    .hero p{margin:0 0 18px; opacity:.96}
+    .cta{
+      display:inline-block; background:var(--accent); color:#000; font-weight:800;
+      text-decoration:none; padding:12px 18px; border-radius:10px;
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .cta:hover{transform:translateY(-1px); filter:brightness(.97)}
+
+    /* =========================
+       Sections
+    ========================== */
+    .section{padding:52px 0}
+    .section h2{margin:0 0 16px; color:var(--navy); font-size: clamp(1.4rem, 3vw, 2rem)}
+    .lead{margin:0 0 22px; color:var(--ink-2)}
+
+    /* =========================
+       Toolbar (Search + Filters)
+    ========================== */
+    .toolbar{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:18px;
+    }
+    .search{
+      display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line);
+      border-radius:10px; padding:8px 10px; box-shadow:0 2px 8px rgba(0,0,0,.04);
+      flex:1 1 260px;
+    }
+    .search input{
+      border:none; outline:none; width:100%; font-size:1rem; color:var(--ink);
+    }
+    .filters{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      border:1px solid var(--line); background:#fff; color:var(--ink);
+      padding:7px 12px; border-radius:999px; cursor:pointer; user-select:none; font-weight:700;
+    }
+    .chip.active{background:var(--navy); color:#fff; border-color:transparent}
+
+    /* =========================
+       Product Grid / Cards
+    ========================== */
+    .grid{
+      display:grid; gap:18px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    .card{
+      background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
+    .card img{aspect-ratio:3/2; object-fit:cover; background:#e9eef6}
+    .card-body{padding:14px 16px 18px}
+    .card-body h3{margin:6px 0 10px; color:var(--navy); font-size:1.05rem}
+    .specs{list-style:none; padding:0; margin:0; color:var(--ink-2); font-size:.96rem}
+    .specs li{padding:7px 0; border-top:1px dashed var(--line)}
+    .specs li:first-child{border-top:none}
+
+    /* =========================
+       Service / Contact / Footer
+    ========================== */
+    .service p, .contact p{font-size:1.05rem; color:var(--ink-2)}
+    .service a, .contact a{color:var(--link); font-weight:800; text-decoration:none}
+    .service a:hover, .contact a:hover{text-decoration:underline}
+
+    .footer{background:var(--navy); color:#cfe1ff; text-align:center; padding:18px 0; font-size:.92rem}
+
+    /* =========================
+       Mobile Nav
+    ========================== */
+    @media (max-width: 900px){
+      .dropdown:hover .dropdown-content{display:none} /* disable hover on touch */
+      .nav{display:none; position:absolute; right:20px; top:60px; background:var(--navy-2); border-radius:12px; padding:12px; flex-direction:column; gap:8px; min-width:220px}
+      .nav.open{display:flex}
+      .nav-toggle{display:inline-block}
+      .dropbtn{width:100%; text-align:left}
+      .dropdown-content{position:static; background:transparent; box-shadow:none; display:block}
+      .dropdown-content a{color:#fff; padding:8px 4px}
+    }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER (with Dropdowns)
+  ========================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top">Accu-Tech Sawing Solutions</a>
-
-      <!-- Mobile toggle -->
+      <a class="brand" href="#top" aria-label="Accu-Tech Sawing Solutions">
+        <span class="dot" aria-hidden="true"></span> Accu-Tech Sawing Solutions
+      </a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
-      <!-- DROPDOWN NAV -->
       <nav class="nav" aria-label="Main">
         <div class="dropdown">
-          <button class="dropbtn">Products</button>
-          <div class="dropdown-content">
-            <a href="#products">View All Products</a>
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</button>
+          <div class="dropdown-content" role="menu">
+            <a href="#products" role="menuitem">View All Products</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <button class="dropbtn">Service</button>
-          <div class="dropdown-content">
-            <a href="#service">Service & Support</a>
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Service</button>
+          <div class="dropdown-content" role="menu">
+            <a href="#service" role="menuitem">Service &amp; Support</a>
           </div>
         </div>
-
         <div class="dropdown">
-          <button class="dropbtn">Contact</button>
-          <div class="dropdown-content">
-            <a href="#contact">Phone & Email</a>
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Contact</button>
+          <div class="dropdown-content" role="menu">
+            <a href="#contact" role="menuitem">Phone &amp; Email</a>
           </div>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
   <section id="top" class="hero">
     <div class="container hero-inner">
       <h1>Precision Metal Cutting with Indotech Bandsaws</h1>
@@ -51,94 +205,110 @@
     </div>
   </section>
 
-  <!-- PRODUCTS -->
+  <!-- =========================
+       PRODUCTS (visible immediately)
+  ========================== -->
   <section id="products" class="section products">
     <div class="container">
       <h2>Products</h2>
-      <p class="lead">Images and key specifications are displayed immediately — no extra clicks.</p>
+      <p class="lead">All models shown with images and key specs (mm + inches where available). Use the search and filters to narrow down.</p>
 
-      <div class="grid">
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="search" role="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#9aa8bb" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5 1.49-1.49-5-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z"/></svg>
+          <input id="searchInput" type="search" placeholder="Search model or spec…" aria-label="Search products">
+        </div>
+        <div class="filters" role="toolbar" aria-label="Product filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="horizontal">Horizontal</button>
+          <button class="chip" data-filter="vertical">Vertical</button>
+          <button class="chip" data-filter="cnc">Enclosed/CNC</button>
+          <button class="chip" data-filter="spm">SPM</button>
+        </div>
+      </div>
 
-        <!-- ITM 360 LMGA / LMGS (E) -->
-        <article class="card">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-360-lmga-rf.jpg" alt="ITM 360 LMGA / LMGS bandsaw" loading="lazy" />
+      <!-- Grid -->
+      <div id="productGrid" class="grid">
+
+        <!-- 360 LMGA / LMGS (E) -->
+        <article class="card" data-tags="horizontal cnc 360 lmga lmgs">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-360-lmga-rf.jpg" alt="ITM 360 LMGA / LMGS bandsaw">
           <div class="card-body">
             <h3>ITM 360 LMGA / LMGS (E)</h3>
             <ul class="specs">
               <li>Cutting Capacity: 360×360 mm (14.17×14.17″) / Ø360 mm (Ø14.17″)</li>
-              <li>Blade Size: 5250×41×1.3 mm (206.69×1.61×0.05″)</li>
-              <li>Blade Tension: Hydraulic</li>
-              <li>Saw Motor: ~7.5 hp • Hydraulic: ~1 hp</li>
-              <li>Notes: LMGA auto-indexing; enclosed CNC (E) variant available</li>
+              <li>Blade: 5250×41×1.3 mm (206.69×1.61×0.05″)</li>
+              <li>Tension: Hydraulic • Drive: ~7.5 hp</li>
+              <li>Note: LMGA auto-indexing; enclosed CNC (E) variant</li>
             </ul>
           </div>
         </article>
 
-        <!-- ITM 415 LMGA / LMGS -->
-        <article class="card">
-          <img src="https://bandsawmachineblog.wordpress.com/2017/08/10/double-column-bandsaw-415-lmgalmgs/featured-image.jpg" alt="ITM 415 LMGA / LMGS bandsaw" loading="lazy" />
+        <!-- 415 LMGA / LMGS -->
+        <article class="card" data-tags="horizontal 415 lmga lmgs">
+          <img src="https://bandsawmachineblog.wordpress.com/2017/08/10/double-column-bandsaw-415-lmgalmgs/featured-image.jpg" alt="ITM 415 LMGA / LMGS bandsaw">
           <div class="card-body">
             <h3>ITM 415 LMGA / LMGS</h3>
             <ul class="specs">
               <li>Cutting Capacity: 415×415 mm (16.34×16.34″) / Ø415 mm (Ø16.34″)</li>
-              <li>Blade Size: 5500×41×1.3 mm (216.54×1.61×0.05″)</li>
-              <li>Blade Tension: Hydraulic</li>
-              <li>Saw Motor: ~7.5 hp</li>
+              <li>Blade: 5500×41×1.3 mm (216.54×1.61×0.05″)</li>
+              <li>Tension: Hydraulic • Drive: ~7.5 hp</li>
             </ul>
           </div>
         </article>
 
-        <!-- ITM 520 LMGA / LMGS -->
-        <article class="card">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-520-lmga-rf.jpg" alt="ITM 520 LMGA / LMGS bandsaw" loading="lazy" />
+        <!-- 520 LMGA / LMGS -->
+        <article class="card" data-tags="horizontal 520 lmga lmgs">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-520-lmga-rf.jpg" alt="ITM 520 LMGA / LMGS bandsaw">
           <div class="card-body">
             <h3>ITM 520 LMGA / LMGS</h3>
             <ul class="specs">
               <li>Cutting Capacity: 520×520 mm (20.47×20.47″) / Ø520 mm (Ø20.47″)</li>
-              <li>Blade Size: ~6650×41×1.3 mm (~261.8×1.61×0.05″)</li>
-              <li>Blade Speed: ~20–100 m/min (65.6–328 fpm)</li>
-              <li>Saw Motor: 7.5–10 hp • Hydraulic: 2 hp • Coolant: 0.16 hp</li>
-              <li>Reservoir: ~80 L • Weight: LMGA ~3800 kg / LMGS ~3100 kg</li>
-              <li>Approx. Dimensions: 3500×2150×2200 mm (137.8×84.6×86.6″)</li>
+              <li>Blade: ~6650×41×1.3 mm (~261.8×1.61×0.05″)</li>
+              <li>Speed: ~20–100 m/min (65.6–328 fpm)</li>
+              <li>Drive: 7.5–10 hp • Hydraulic: 2 hp • Coolant: 0.16 hp</li>
+              <li>Reservoir ~80 L • Wt: LMGA ~3800 kg / LMGS ~3100 kg</li>
+              <li>Dim: 3500×2150×2200 mm (137.8×84.6×86.6″)</li>
             </ul>
           </div>
         </article>
 
-        <!-- ITM 550 LMGA / LMGS -->
-        <article class="card">
-          <img src="https://via.placeholder.com/900x600?text=ITM+550+LMGA+%2F+LMGS" alt="ITM 550 LMGA / LMGS bandsaw" loading="lazy" />
+        <!-- 550 LMGA / LMGS -->
+        <article class="card" data-tags="horizontal 550 lmga lmgs">
+          <img src="https://via.placeholder.com/900x600?text=ITM+550+LMGA+%2F+LMGS" alt="ITM 550 LMGA / LMGS bandsaw">
           <div class="card-body">
             <h3>ITM 550 LMGA / LMGS</h3>
             <ul class="specs">
               <li>Cutting Capacity: 550×550 mm (21.65×21.65″) / Ø550 mm (Ø21.65″)</li>
-              <li>Blade Size: 8030×54×1.6 mm (316.93×2.13×0.06″)</li>
-              <li>Blade Speed: ~20–80 m/min (65.6–262.4 fpm)</li>
-              <li>Saw Motor: 12.5 hp • Hydraulic: 2 hp • Coolant: 0.25 hp</li>
-              <li>Reservoir: 80 L • Weight: LMGA ~6100 kg / LMGS ~5300 kg</li>
-              <li>Approx. Dimensions: 4200×2200×2500 mm (165.35×86.61×98.43″)</li>
+              <li>Blade: 8030×54×1.6 mm (316.93×2.13×0.06″)</li>
+              <li>Speed: ~20–80 m/min (65.6–262.4 fpm)</li>
+              <li>Drive: 12.5 hp • Hydraulic: 2 hp • Coolant: 0.25 hp</li>
+              <li>Reservoir 80 L • Wt: LMGA ~6100 kg / LMGS ~5300 kg</li>
+              <li>Dim: 4200×2200×2500 mm (165.35×86.61×98.43″)</li>
             </ul>
           </div>
         </article>
 
-        <!-- ITM 650 LMGA / LMGS -->
-        <article class="card">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-650-lmga-rf.jpg" alt="ITM 650 LMGA / LMGS bandsaw" loading="lazy" />
+        <!-- 650 LMGA / LMGS -->
+        <article class="card" data-tags="horizontal 650 lmga lmgs">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-650-lmga-rf.jpg" alt="ITM 650 LMGA / LMGS bandsaw">
           <div class="card-body">
             <h3>ITM 650 LMGA / LMGS</h3>
             <ul class="specs">
               <li>Cutting Capacity: 650×650 mm (25.59×25.59″) / Ø650 mm (Ø25.59″)</li>
-              <li>Blade Size: 8200×67×1.6 mm (322.83×2.64×0.06″)</li>
-              <li>Blade Speed: ~20–80 m/min (65.6–262.4 fpm)</li>
-              <li>Saw Motor: 12.5 hp • Hydraulic: 2 hp • Coolant: 0.25 hp</li>
-              <li>Reservoir: 100 L • Weight: LMGA ~6400 kg / LMGS ~5500 kg</li>
-              <li>Approx. Dimensions: 4450×2200×2600 mm (175.20×86.61×102.36″)</li>
+              <li>Blade: 8200×67×1.6 mm (322.83×2.64×0.06″)</li>
+              <li>Speed: ~20–80 m/min (65.6–262.4 fpm)</li>
+              <li>Drive: 12.5 hp • Hydraulic: 2 hp • Coolant: 0.25 hp</li>
+              <li>Reservoir 100 L • Wt: LMGA ~6400 kg / LMGS ~5500 kg</li>
+              <li>Dim: 4450×2200×2600 mm (175.20×86.61×102.36″)</li>
             </ul>
           </div>
         </article>
 
-        <!-- ITM 725 LMGS (PRO) -->
-        <article class="card">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-725-lmgs-pro.jpg" alt="ITM 725 LMGS (PRO) bandsaw" loading="lazy" />
+        <!-- 725 LMGS (PRO) -->
+        <article class="card" data-tags="horizontal 725 lmgs">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-725-lmgs-pro.jpg" alt="ITM 725 LMGS (PRO)">
           <div class="card-body">
             <h3>ITM 725 LMGS (PRO)</h3>
             <ul class="specs">
@@ -150,9 +320,9 @@
         </article>
 
         <!-- SPM 460V (SERVO) -->
-        <article class="card">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/spm-460-v-servo.jpg" alt="SPM 460V (SERVO) vertical machine" loading="lazy" />
-        <div class="card-body">
+        <article class="card" data-tags="vertical spm 460">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/spm-460-v-servo.jpg" alt="SPM 460V (SERVO) vertical">
+          <div class="card-body">
             <h3>SPM 460V (SERVO)</h3>
             <ul class="specs">
               <li>Automatic cylinder-head cutting vertical machine</li>
@@ -163,8 +333,8 @@
         </article>
 
         <!-- 460 SPM (SERVO) -->
-        <article class="card">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/460-spm-servo.jpg" alt="460 SPM (SERVO) cutting machine" loading="lazy" />
+        <article class="card" data-tags="spm 460">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/460-spm-servo.jpg" alt="460 SPM (SERVO)">
           <div class="card-body">
             <h3>460 SPM (SERVO)</h3>
             <ul class="specs">
@@ -175,28 +345,28 @@
           </div>
         </article>
 
-        <!-- ITM 850 LMGA / LMGS -->
-        <article class="card">
-          <img src="https://via.placeholder.com/900x600?text=ITM+850+LMGA+%2F+LMGS" alt="ITM 850 LMGA / LMGS bandsaw" loading="lazy" />
+        <!-- 850 LMGA / LMGS (placeholder image) -->
+        <article class="card" data-tags="horizontal 850 lmga lmgs">
+          <img src="https://via.placeholder.com/900x600?text=ITM+850+LMGA+%2F+LMGS" alt="ITM 850 LMGA / LMGS">
           <div class="card-body">
             <h3>ITM 850 LMGA / LMGS</h3>
             <ul class="specs">
-              <li>Large-format dual-column band saw (LMGA auto-indexing / LMGS semi-auto)</li>
+              <li>Large-format dual-column band saw (LMGA auto-index / LMGS semi-auto)</li>
               <li>High-power drive & hydraulic system • heavy-section capacity</li>
-              <li>(Replace with product image link when available)</li>
+              <li>(Swap this image URL with your product photo when available)</li>
             </ul>
           </div>
         </article>
 
-        <!-- ITM 1050 LMGA / LMGS -->
-        <article class="card">
-          <img src="https://via.placeholder.com/900x600?text=ITM+1050+LMGA+%2F+LMGS" alt="ITM 1050 LMGA / LMGS bandsaw" loading="lazy" />
+        <!-- 1050 LMGA / LMGS (placeholder image) -->
+        <article class="card" data-tags="horizontal 1050 lmga lmgs">
+          <img src="https://via.placeholder.com/900x600?text=ITM+1050+LMGA+%2F+LMGS" alt="ITM 1050 LMGA / LMGS">
           <div class="card-body">
             <h3>ITM 1050 LMGA / LMGS</h3>
             <ul class="specs">
               <li>Extra-large dual-column saw for heavy sections</li>
-              <li>LMGA auto-indexing shuttle • LMGS semi-auto operation</li>
-              <li>(Replace with product image link when available)</li>
+              <li>LMGA auto-index shuttle • LMGS semi-auto operation</li>
+              <li>(Swap this image URL with your product photo when available)</li>
             </ul>
           </div>
         </article>
@@ -205,15 +375,19 @@
     </div>
   </section>
 
-  <!-- SERVICE -->
+  <!-- =========================
+       SERVICE
+  ========================== -->
   <section id="service" class="section service">
     <div class="container">
       <h2>Service</h2>
-      <p><strong>Accu-Tech Sawing Solutions provides full-fledged bandsaw service.</strong> This includes preventative maintenance and installation. Contact <a href="tel:13315756241">331-575-6241</a> to get scheduled.</p>
+      <p><strong>Accu-Tech Sawing Solutions provides full fledged bandsaw service.</strong> This includes preventative maintenance and installation. Contact <a href="tel:13315756241">331-575-6241</a> to get scheduled.</p>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================== -->
   <section id="contact" class="section contact">
     <div class="container">
       <h2>Contact</h2>
@@ -222,7 +396,9 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer class="footer">
     <div class="container">© <span id="y"></span> Accu-Tech Sawing Solutions</div>
   </footer>
@@ -238,6 +414,35 @@
       const open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
+
+    // Filters + Search
+    const chips = document.querySelectorAll('.chip');
+    const grid  = document.getElementById('productGrid') || document.querySelector('.grid');
+    const cards = Array.from(grid.querySelectorAll('.card'));
+    const searchInput = document.getElementById('searchInput');
+
+    function applyFilters(){
+      const active = document.querySelector('.chip.active')?.dataset.filter || 'all';
+      const term = (searchInput.value || '').trim().toLowerCase();
+
+      cards.forEach(card=>{
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const text = card.innerText.toLowerCase();
+        const matchFilter = active==='all' || tags.includes(active);
+        const matchSearch = term==='' || text.includes(term);
+        card.style.display = (matchFilter && matchSearch) ? '' : 'none';
+      });
+    }
+
+    chips.forEach(ch=>{
+      ch.addEventListener('click', ()=>{
+        chips.forEach(c=>c.classList.remove('active'));
+        ch.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    searchInput?.addEventListener('input', applyFilters);
   </script>
 </body>
 </html>
