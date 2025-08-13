@@ -1,65 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Accu-Tech Sawing Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Accu-Tech Sawing Solutions</title>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <nav class="navbar">
-  <div class="container">
-    <a href="#top" class="logo">Accu-Tech</a>
-    <div class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-  <header class="hero">
-    <div class="container">
-      <h1>Accu-Tech Sawing Solutions</h1>
-      <p>Precision Metal Cutting with Indotech Bandsaws</p>
-      <a href="#contact" class="cta-btn">Contact Us</a>
-    </div>
-  </header>
+    <header>
+        <h1>Accu-Tech Sawing Solutions</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="products">
-    <div class="container">
-      <h2>Our Featured Bandsaws</h2>
-      <div class="product-grid">
-        <div class="product">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/AV18-3.jpg" alt="Indotech Aviator">
-          <h3>Indotech Aviator DC18NC</h3>
-          <p>High-performance dual-column CNC bandsaw with auto-indexing, Omron touchscreen control, and chip conveyor.</p>
+    <section id="home">
+        <h2>Welcome to Accu-Tech Sawing Solutions</h2>
+        <p>We sell high-performance Indotech bandsaws for all your industrial cutting needs.</p>
+    </section>
+
+    <section id="products">
+        <h2>Our Bandsaws</h2>
+        <div class="product-grid">
+            <div class="product" id="product-520">
+                <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-520-lmga-rf.jpg" alt="ITM 520 LMGA" class="product-image">
+                <h3>520 LMGA / LMGS</h3>
+            </div>
+
+            <div class="product" id="product-550">
+                <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-550-lmga-rf.jpg" alt="ITM 550 LMGA" class="product-image">
+                <h3>550 LMGA / LMGS</h3>
+            </div>
+
+            <div class="product" id="product-650">
+                <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-650-lmga-rf.jpg" alt="ITM 650 LMGA" class="product-image">
+                <h3>650 LMGA / LMGS</h3>
+            </div>
+
+            <div class="product" id="product-415">
+                <img src="https://bandsawmachineblog.wordpress.com/2017/08/10/double-column-bandsaw-415-lmgalmgs/featured-image.jpg" alt="ITM 415 LMGA" class="product-image">
+                <h3>415 LMGA / LMGS</h3>
+            </div>
+
+            <div class="product" id="product-360">
+                <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-360-lmga-rf.jpg" alt="ITM 360 LMGA" class="product-image">
+                <h3>360 LMGA / LMGS</h3>
+            </div>
         </div>
-        <div class="product">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/ITM-850.jpg" alt="Indotech ITM850">
-          <h3>Indotech ITM 850</h3>
-          <p>Precision horizontal bandsaw with hydraulic blade tensioning and linear roller guidance.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: 331-575-6241</p>
+    </section>
+
+    <!-- Modal for detailed product information -->
+    <div id="product-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-content">
+                <!-- Dynamic content will go here -->
+            </div>
         </div>
-      </div>
     </div>
-  </section>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>Phone: <a href="tel:3315756241">(331) 575-6241</a></p>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+    <script>
+        // Define the product data (including specifications and image URLs)
+        const productData = {
+            "520": {
+                "name": "ITM 520 LMGA / LMGS",
+                "image": "https://indotechgroup.in/wp-content/uploads/2023/09/itm-520-lmga-rf.jpg",
+                "specs": [
+                    "Cutting Capacity: 520x520 mm / Ø520 mm (20.47x20.47 in / Ø20.47 in)",
+                    "Blade Size: 6650x41x1.3 mm (261.81x1.61x0.05 in)",
+                    "Blade Tension: Hydraulic",
+                    "Saw Motor: 7.5/10 hp",
+                    "Hydraulic Motor: 2 hp",
+                    "Coolant Motor: 0.16 hp",
+                    "Job Indexing: LMGA version",
+                    "Weight: 3800/3100 kg",
+                    "Dimensions: 3500x2150x2200 mm (137.80x84.65x86.61 in)"
+                ]
+            },
+            "550": {
+                "name": "ITM 550 LMGA / LMGS",
+                "image": "https://indotechgroup.in/wp-content/uploads/2023/09/itm-550-lmga-rf.jpg",
+                "specs": [
+                    "Cutting Capacity: 550x550 mm / Ø550 mm (21.65x21.65 in / Ø21.65 in)",
+                    "Blade Size: 8030x54x1.6 mm (316.93x2.13x0.06 in)",
+                    "Blade Tension: Hydraulic",
+                    "Saw Motor: 12.5 hp",
+                    "Hydraulic Motor: 2 hp",
+                    "Coolant Motor: 0.25 hp",
+                    "Job Indexing: LMGA version",
+                    "Weight: 6100/5300 kg",
+                    "Dimensions: 4200x2200x2500 mm (165.35x86.61x98.43 in)"
+                ]
+            },
+            "650": {
+                "name": "ITM 650 LMGA / LMGS",
+                "image": "https://indotechgroup.in/wp-content/uploads/2023/09/itm-650-lmga-rf.jpg",
+                "specs": [
+                    "Cutting Capacity: 650x650 mm / Ø650 mm (25.59x25.59 in / Ø25.59 in)",
+                    "Blade Size: 8200x67x1.6 mm (322.83x2.64x0.06 in)",
+                    "Blade Tension: Hydraulic",
+                    "Saw Motor: 12.5 hp",
+                    "Hydraulic Motor: 2 hp",
+                    "Coolant Motor: 0.25 hp",
+                    "Job Indexing: LMGA version",
+                    "Weight: 6400/5500 kg",
+                    "Dimensions: 4450x2200x2600 mm (175.20x86.61x102.36 in)"
+                ]
+            },
+            "415": {
+                "name": "ITM 415 LMGA / LMGS",
+                "image": "https://bandsawmachineblog.wordpress.com/2017/08/10/double-column-bandsaw-415-lmgalmgs/featured-image.jpg",
+                "specs": [
+                    "Cutting Capacity: 415x415 mm / Ø415 mm (16.34x16.34 in / Ø16.34 in)",
+                    "Blade Size: 5500x41x1.3 mm (216.54x1.61x0.05 in)",
+                    "Blade Tension: Hydraulic",
+                    "Saw Motor: 7.5 hp",
+                    "Hydraulic Motor: 1 hp"
+                ]
+            },
+            "360": {
+                "name": "ITM 360 LMGA / LMGS",
+                "image": "https://indotechgroup.in/wp-content/uploads/2023/09/itm-360-lmga-rf.jpg",
+                "specs": [
+                    "Cutting Capacity: 360x360 mm / Ø360 mm (14.17x14.17 in / Ø14.17 in)",
+                    "Blade Size: 5250x41x1.3 mm (206.69x1.61x0.05 in)",
+                    "Blade Tension: Hydraulic",
+                    "Saw Motor: 5 hp",
+                    "Hydraulic Motor: 1 hp"
+                ]
+            }
+        };
 
-  <footer>
-    <div class="container">
-      &copy; 2025 Accu-Tech Sawing Solutions. All rights reserved.
-    </div>
-  </footer>
+        // Open modal and load product details
+        document.querySelectorAll('.product').forEach(product => {
+            product.addEventListener('click', () => {
+                const productId = product.id.split('-')[1];
+                const productDetails = productData[productId];
+
+                const modalContent = document.getElementById('modal-content');
+                modalContent.innerHTML = `
+                    <h2>${productDetails.name}</h2>
+                    <img src="${productDetails.image}" alt="${productDetails.name}">
+                    <ul>
+                        ${productDetails.specs.map(spec => `<li>${spec}</li>`).join('')}
+                    </ul>
+                `;
+                document.getElementById('product-details-modal').style.display = 'block';
+            });
+        });
+
+        // Close modal
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.getElementById('product-details-modal').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
