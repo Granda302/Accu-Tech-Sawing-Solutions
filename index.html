@@ -1,205 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accu-Tech Sawing Solutions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f5f5f5;
-        }
-        header {
-            background: #1a2d4b;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            margin: 0;
-        }
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-        }
-        .card-content {
-            padding: 15px;
-        }
-        .card h2 {
-            margin-top: 0;
-            color: #1a2d4b;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 6px;
-            text-align: center;
-        }
-        th {
-            background: #eee;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accu-Tech Sawing Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Accu-Tech Sawing Solutions — Sales, installation, and service for Indotech bandsaws." />
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Accu-Tech Sawing Solutions</a>
 
-<header>
-    <h1>Accu-Tech Sawing Solutions</h1>
-    <p>High-Precision Indotech Bandsaws</p>
-</header>
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
-<section class="products">
-
-    <!-- ITM 360 LMGA (E) -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=ITM+360+LMGA+E" alt="ITM 360 LMGA (E)">
-        <div class="card-content">
-            <h2>ITM 360 LMGA (E)</h2>
-            <p>Fully Enclosed CNC Fully Automatic Bandsaw Machine with Precision Ball Screw and Servo Drive for Arm Feeding/Job Indexing.</p>
+      <!-- DROPDOWN NAV -->
+      <nav class="nav" aria-label="Main">
+        <div class="dropdown">
+          <button class="dropbtn">Products</button>
+          <div class="dropdown-content">
+            <a href="#products">View All Products</a>
+          </div>
         </div>
-    </div>
 
-    <!-- SPM 460V (SERVO) -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=SPM+460V+SERVO" alt="SPM 460V (SERVO)">
-        <div class="card-content">
-            <h2>SPM 460V (SERVO)</h2>
-            <p>Specially Designed Automatic Cylinder Head Cutting Vertical Machine. Minimal Cycle Time.</p>
+        <div class="dropdown">
+          <button class="dropbtn">Service</button>
+          <div class="dropdown-content">
+            <a href="#service">Service & Support</a>
+          </div>
         </div>
-    </div>
 
-    <!-- ITM 725 LMGS (PRO) -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=ITM+725+LMGS+PRO" alt="ITM 725 LMGS (PRO)">
-        <div class="card-content">
-            <h2>ITM 725 LMGS (PRO)</h2>
-            <p>Semi-Automatic Bandsaw with Precision Ball Screw and Servo Drive for Arm Feed. Heavy-Duty Dovetail Movable & Auto-Adjustable Blade Guide.</p>
+        <div class="dropdown">
+          <button class="dropbtn">Contact</button>
+          <div class="dropdown-content">
+            <a href="#contact">Phone & Email</a>
+          </div>
         </div>
+      </nav>
     </div>
+  </header>
 
-    <!-- 460 SPM (SERVO) -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=460+SPM+SERVO" alt="460 SPM (SERVO)">
-        <div class="card-content">
-            <h2>460 SPM (SERVO)</h2>
-            <p>Automatic Aluminum Cylinder Head/Riser Cutting Machine with Hydraulic Fixture & Servo Indexing. Hydraulic Multi-Point Clamping Fixtures.</p>
-        </div>
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="container hero-inner">
+      <h1>Precision Metal Cutting with Indotech Bandsaws</h1>
+      <p>Sales • Installation • Preventative Maintenance • Support</p>
+      <a class="cta" href="#products">Browse Products</a>
     </div>
+  </section>
 
-    <!-- 520 LMGA / LMGS -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=520+LMGA+LMGS" alt="520 LMGA / LMGS">
-        <div class="card-content">
-            <h2>520 LMGA / LMGS</h2>
-            <table>
-                <tr><th>Cutting Capacity (Square)</th><td>20.47" x 20.47"</td></tr>
-                <tr><th>Cutting Capacity (Round)</th><td>20.47"</td></tr>
-                <tr><th>Cutting Speed</th><td>65.6 - 328 fpm</td></tr>
-                <tr><th>Blade Size</th><td>262" x 1.61" x 0.051"</td></tr>
-                <tr><th>Saw Motor</th><td>7.5 / 10 hp</td></tr>
-                <tr><th>Hydraulic Motor</th><td>2 hp</td></tr>
-                <tr><th>Coolant Motor</th><td>0.16 hp</td></tr>
-                <tr><th>Weight (LMGA)</th><td>8,378 lbs</td></tr>
-                <tr><th>Weight (LMGS)</th><td>6,834 lbs</td></tr>
-            </table>
-        </div>
+  <!-- PRODUCTS -->
+  <section id="products" class="section products">
+    <div class="container">
+      <h2>Products</h2>
+      <p class="lead">Images and key specifications are displayed immediately — no extra clicks.</p>
+
+      <div class="grid">
+
+        <!-- ITM 360 LMGA / LMGS (E) -->
+        <article class="card">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-360-lmga-rf.jpg" alt="ITM 360 LMGA / LMGS bandsaw" loading="lazy" />
+          <div class="card-body">
+            <h3>ITM 360 LMGA / LMGS (E)</h3>
+            <ul class="specs">
+              <li>Cutting Capacity: 360×360 mm (14.17×14.17″) / Ø360 mm (Ø14.17″)</li>
+              <li>Blade Size: 5250×41×1.3 mm (206.69×1.61×0.05″)</li>
+              <li>Blade Tension: Hydraulic</li>
+              <li>Saw Motor: ~7.5 hp • Hydraulic: ~1 hp</li>
+              <li>Notes: LMGA auto-indexing; enclosed CNC (E) variant available</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ITM 415 LMGA / LMGS -->
+        <article class="card">
+          <img src="https://bandsawmachineblog.wordpress.com/2017/08/10/double-column-bandsaw-415-lmgalmgs/featured-image.jpg" alt="ITM 415 LMGA / LMGS bandsaw" loading="lazy" />
+          <div class="card-body">
+            <h3>ITM 415 LMGA / LMGS</h3>
+            <ul class="specs">
+              <li>Cutting Capacity: 415×415 mm (16.34×16.34″) / Ø415 mm (Ø16.34″)</li>
+              <li>Blade Size: 5500×41×1.3 mm (216.54×1.61×0.05″)</li>
+              <li>Blade Tension: Hydraulic</li>
+              <li>Saw Motor: ~7.5 hp</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ITM 520 LMGA / LMGS -->
+        <article class="card">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-520-lmga-rf.jpg" alt="ITM 520 LMGA / LMGS bandsaw" loading="lazy" />
+          <div class="card-body">
+            <h3>ITM 520 LMGA / LMGS</h3>
+            <ul class="specs">
+              <li>Cutting Capacity: 520×520 mm (20.47×20.47″) / Ø520 mm (Ø20.47″)</li>
+              <li>Blade Size: ~6650×41×1.3 mm (~261.8×1.61×0.05″)</li>
+              <li>Blade Speed: ~20–100 m/min (65.6–328 fpm)</li>
+              <li>Saw Motor: 7.5–10 hp • Hydraulic: 2 hp • Coolant: 0.16 hp</li>
+              <li>Reservoir: ~80 L • Weight: LMGA ~3800 kg / LMGS ~3100 kg</li>
+              <li>Approx. Dimensions: 3500×2150×2200 mm (137.8×84.6×86.6″)</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ITM 550 LMGA / LMGS -->
+        <article class="card">
+          <img src="https://via.placeholder.com/900x600?text=ITM+550+LMGA+%2F+LMGS" alt="ITM 550 LMGA / LMGS bandsaw" loading="lazy" />
+          <div class="card-body">
+            <h3>ITM 550 LMGA / LMGS</h3>
+            <ul class="specs">
+              <li>Cutting Capacity: 550×550 mm (21.65×21.65″) / Ø550 mm (Ø21.65″)</li>
+              <li>Blade Size: 8030×54×1.6 mm (316.93×2.13×0.06″)</li>
+              <li>Blade Speed: ~20–80 m/min (65.6–262.4 fpm)</li>
+              <li>Saw Motor: 12.5 hp • Hydraulic: 2 hp • Coolant: 0.25 hp</li>
+              <li>Reservoir: 80 L • Weight: LMGA ~6100 kg / LMGS ~5300 kg</li>
+              <li>Approx. Dimensions: 4200×2200×2500 mm (165.35×86.61×98.43″)</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ITM 650 LMGA / LMGS -->
+        <article class="card">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-650-lmga-rf.jpg" alt="ITM 650 LMGA / LMGS bandsaw" loading="lazy" />
+          <div class="card-body">
+            <h3>ITM 650 LMGA / LMGS</h3>
+            <ul class="specs">
+              <li>Cutting Capacity: 650×650 mm (25.59×25.59″) / Ø650 mm (Ø25.59″)</li>
+              <li>Blade Size: 8200×67×1.6 mm (322.83×2.64×0.06″)</li>
+              <li>Blade Speed: ~20–80 m/min (65.6–262.4 fpm)</li>
+              <li>Saw Motor: 12.5 hp • Hydraulic: 2 hp • Coolant: 0.25 hp</li>
+              <li>Reservoir: 100 L • Weight: LMGA ~6400 kg / LMGS ~5500 kg</li>
+              <li>Approx. Dimensions: 4450×2200×2600 mm (175.20×86.61×102.36″)</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ITM 725 LMGS (PRO) -->
+        <article class="card">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-725-lmgs-pro.jpg" alt="ITM 725 LMGS (PRO) bandsaw" loading="lazy" />
+          <div class="card-body">
+            <h3>ITM 725 LMGS (PRO)</h3>
+            <ul class="specs">
+              <li>Semi-automatic; precision ball screw + servo arm feed</li>
+              <li>Heavy-duty dovetail movable & auto-adjustable blade guide</li>
+              <li>Moving vice for long/heavy jobs</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- SPM 460V (SERVO) -->
+        <article class="card">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/spm-460-v-servo.jpg" alt="SPM 460V (SERVO) vertical machine" loading="lazy" />
+        <div class="card-body">
+            <h3>SPM 460V (SERVO)</h3>
+            <ul class="specs">
+              <li>Automatic cylinder-head cutting vertical machine</li>
+              <li>Dual hydraulic work tables • minimal cycle time</li>
+              <li>Servo indexing via precision ball screw</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 460 SPM (SERVO) -->
+        <article class="card">
+          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/460-spm-servo.jpg" alt="460 SPM (SERVO) cutting machine" loading="lazy" />
+          <div class="card-body">
+            <h3>460 SPM (SERVO)</h3>
+            <ul class="specs">
+              <li>Automatic aluminum cylinder head/riser cutting</li>
+              <li>Hydraulic multi-point clamping fixtures</li>
+              <li>Work table auto-feed via ball screw + servo drive</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ITM 850 LMGA / LMGS -->
+        <article class="card">
+          <img src="https://via.placeholder.com/900x600?text=ITM+850+LMGA+%2F+LMGS" alt="ITM 850 LMGA / LMGS bandsaw" loading="lazy" />
+          <div class="card-body">
+            <h3>ITM 850 LMGA / LMGS</h3>
+            <ul class="specs">
+              <li>Large-format dual-column band saw (LMGA auto-indexing / LMGS semi-auto)</li>
+              <li>High-power drive & hydraulic system • heavy-section capacity</li>
+              <li>(Replace with product image link when available)</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ITM 1050 LMGA / LMGS -->
+        <article class="card">
+          <img src="https://via.placeholder.com/900x600?text=ITM+1050+LMGA+%2F+LMGS" alt="ITM 1050 LMGA / LMGS bandsaw" loading="lazy" />
+          <div class="card-body">
+            <h3>ITM 1050 LMGA / LMGS</h3>
+            <ul class="specs">
+              <li>Extra-large dual-column saw for heavy sections</li>
+              <li>LMGA auto-indexing shuttle • LMGS semi-auto operation</li>
+              <li>(Replace with product image link when available)</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
     </div>
+  </section>
 
-    <!-- 550 LMGA / LMGS -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=550+LMGA+LMGS" alt="550 LMGA / LMGS">
-        <div class="card-content">
-            <h2>550 LMGA / LMGS</h2>
-            <table>
-                <tr><th>Cutting Capacity (Square)</th><td>21.65" x 21.65"</td></tr>
-                <tr><th>Cutting Capacity (Round)</th><td>21.65"</td></tr>
-                <tr><th>Cutting Speed</th><td>65.6 - 262.4 fpm</td></tr>
-                <tr><th>Blade Size</th><td>316.2" x 2.13" x 0.063"</td></tr>
-                <tr><th>Saw Motor</th><td>12.5 hp</td></tr>
-                <tr><th>Hydraulic Motor</th><td>2 hp</td></tr>
-                <tr><th>Coolant Motor</th><td>0.25 hp</td></tr>
-                <tr><th>Weight (LMGA)</th><td>13,448 lbs</td></tr>
-                <tr><th>Weight (LMGS)</th><td>11,684 lbs</td></tr>
-            </table>
-        </div>
+  <!-- SERVICE -->
+  <section id="service" class="section service">
+    <div class="container">
+      <h2>Service</h2>
+      <p><strong>Accu-Tech Sawing Solutions provides full-fledged bandsaw service.</strong> This includes preventative maintenance and installation. Contact <a href="tel:13315756241">331-575-6241</a> to get scheduled.</p>
     </div>
+  </section>
 
-    <!-- 650 LMGA / LMGS -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=650+LMGA+LMGS" alt="650 LMGA / LMGS">
-        <div class="card-content">
-            <h2>650 LMGA / LMGS</h2>
-            <table>
-                <tr><th>Cutting Capacity (Square)</th><td>25.59" x 25.59"</td></tr>
-                <tr><th>Cutting Capacity (Round)</th><td>25.59"</td></tr>
-                <tr><th>Cutting Speed</th><td>65.6 - 262.4 fpm</td></tr>
-                <tr><th>Blade Size</th><td>322.8" x 2.64" x 0.063"</td></tr>
-                <tr><th>Saw Motor</th><td>12.5 hp</td></tr>
-                <tr><th>Hydraulic Motor</th><td>2 hp</td></tr>
-                <tr><th>Coolant Motor</th><td>0.25 hp</td></tr>
-                <tr><th>Weight (LMGA)</th><td>14,110 lbs</td></tr>
-                <tr><th>Weight (LMGS)</th><td>12,125 lbs</td></tr>
-            </table>
-        </div>
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p><strong>Phone:</strong> <a href="tel:13315756241">(331) 575-6241</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@accutechsawing.com">info@accutechsawing.com</a></p>
     </div>
+  </section>
 
-    <!-- 850 LMGA / LMGS -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=850+LMGA+LMGS" alt="850 LMGA / LMGS">
-        <div class="card-content">
-            <h2>850 LMGA / LMGS</h2>
-            <table>
-                <tr><th>Cutting Capacity (Square)</th><td>33.46" x 33.46"</td></tr>
-                <tr><th>Cutting Capacity (Round)</th><td>33.46"</td></tr>
-                <tr><th>Cutting Speed</th><td>65.6 - 262.4 fpm</td></tr>
-                <tr><th>Blade Size</th><td>362.6" x 2.64" x 0.063"</td></tr>
-                <tr><th>Saw Motor</th><td>12.5 / 15 hp</td></tr>
-                <tr><th>Hydraulic Motor</th><td>2 hp</td></tr>
-                <tr><th>Coolant Motor</th><td>0.25 hp</td></tr>
-                <tr><th>Weight (LMGA)</th><td>16,534 lbs</td></tr>
-                <tr><th>Weight (LMGS)</th><td>14,770 lbs</td></tr>
-            </table>
-        </div>
-    </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Accu-Tech Sawing Solutions</div>
+  </footer>
 
-    <!-- 1050 LMGA / LMGS -->
-    <div class="card">
-        <img src="https://via.placeholder.com/600x400?text=1050+LMGA+LMGS" alt="1050 LMGA / LMGS">
-        <div class="card-content">
-            <h2>1050 LMGA / LMGS</h2>
-            <table>
-                <tr><th>Cutting Capacity (Square)</th><td>41.34" x 41.34"</td></tr>
-                <tr><th>Cutting Capacity (Round)</th><td>41.34"</td></tr>
-                <tr><th>Cutting Speed</th><td>65.6 - 262.4 fpm</td></tr>
-                <tr><th>Blade Size</th><td>419.3" x 2.64" x 0.063"</td></tr>
-                <tr><th>Saw Motor</th><td>15 / 20 hp</td></tr>
-                <tr><th>Hydraulic Motor</th><td>3 hp</td></tr>
-                <tr><th>Coolant Motor</th><td>0.25 hp</td></tr>
-                <tr><th>Weight (LMGA)</th><td>21,494 lbs</td></tr>
-                <tr><th>Weight (LMGS)</th><td>17,857 lbs</td></tr>
-            </table>
-        </div>
-    </div>
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-</section>
-
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
 </body>
 </html>
