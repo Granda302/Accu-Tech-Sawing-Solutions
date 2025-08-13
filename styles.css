@@ -1,89 +1,145 @@
-/* Base / Reset */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #222; background:#f6f8fb; }
-img { max-width: 100%; display: block; }
-
-/* Container */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-/* Header / Nav */
-.site-header { background:#123a62; color:#fff; position: sticky; top:0; z-index: 1000; }
-.header-inner { display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px; }
-.brand { font-weight:700; color:#fff; text-decoration:none; font-size:1.05rem; letter-spacing:0.3px; }
-
-.nav { display:flex; gap:18px; align-items:center; }
-.nav.open { display:block; }
-
-.nav-toggle { display:none; background:transparent; border:1px solid rgba(255,255,255,0.4); color:#fff; padding:6px 10px; border-radius:6px; font-size:1rem; }
-
-/* Dropdowns */
-.dropdown { position:relative; }
-.dropbtn { background:transparent; color:#fff; border:none; font: inherit; padding:8px 10px; cursor:pointer; border-radius:6px; }
-.dropbtn:hover { background:rgba(255,255,255,0.1); }
-.dropdown-content {
-  position:absolute; left:0; top:100%;
-  background:#fff; min-width: 200px; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,0.15);
-  display:none; overflow:hidden;
-}
-.dropdown:hover .dropdown-content { display:block; }
-.dropdown-content a {
-  display:block; padding:10px 12px; color:#123a62; text-decoration:none; font-weight:600;
-}
-.dropdown-content a:hover { background:#eef3fa; }
-
-/* Hero */
-.hero {
-  background: linear-gradient( to bottom right, rgba(18,58,98,0.92), rgba(18,58,98,0.75) ), url('https://indotechgroup.in/wp-content/uploads/2023/09/AV18-3.jpg') center/cover no-repeat;
-  color:#fff; padding:80px 0;
-}
-.hero-inner { text-align:center; }
-.hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin:0 0 8px; }
-.hero p { opacity:0.95; margin:0 0 16px; }
-.cta {
-  display:inline-block; background:#f0c000; color:#000; font-weight:700;
-  padding:10px 16px; border-radius:8px; text-decoration:none;
-}
-.cta:hover { filter: brightness(0.95); }
-
-/* Sections */
-.section { padding: 48px 0; }
-.section h2 { margin:0 0 14px; color:#123a62; font-size: clamp(1.4rem, 3vw, 2rem); }
-.lead { color:#4b5a6b; margin-bottom: 22px; }
-
-/* Products Grid */
-.products .grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-  gap:18px;
+/* =========================
+   Brand + Base
+========================== */
+:root{
+  --navy:#122e4d;
+  --navy-2:#0f2a44;
+  --ink:#1b2430;
+  --ink-2:#2e3b4a;
+  --cloud:#f6f8fb;
+  --card:#ffffff;
+  --line:#e7edf6;
+  --accent:#f0c000;
+  --link:#0c64d6;
+  --shadow: 0 8px 24px rgba(18,46,77,.12);
+  --shadow-lg: 0 14px 36px rgba(18,46,77,.18);
+  --radius:14px;
 }
 
-.card {
-  background:#fff; border-radius:12px; overflow:hidden;
-  box-shadow: 0 6px 18px rgba(23,34,56,0.08);
-  transition: transform .2s ease, box-shadow .2s ease;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+  color:var(--ink); background:var(--cloud);
 }
-.card:hover { transform: translateY(-4px); box-shadow: 0 10px 26px rgba(23,34,56,0.12); }
-.card img { aspect-ratio: 3 / 2; object-fit: cover; background:#e9eef6; }
-.card-body { padding:14px 14px 18px; }
-.card-body h3 { margin: 6px 0 10px; color:#123a62; font-size:1.05rem; }
-.specs { list-style:none; padding:0; margin:0; color:#2f3c4a; font-size:0.95rem; }
-.specs li { padding:6px 0; border-top:1px dashed #e6ecf5; }
-.specs li:first-child { border-top: none; }
+img{max-width:100%; display:block}
+.container{max-width:1200px; margin:0 auto; padding:0 20px}
+.section{padding:52px 0}
+.section h2{margin:0 0 16px; color:var(--navy); font-size: clamp(1.4rem, 3vw, 2rem)}
+.lead{margin:0 0 22px; color:var(--ink-2)}
 
-/* Service / Contact blocks */
-.service p, .contact p { font-size:1rem; color:#2a3644; }
-.service a, .contact a { color:#0c64d6; text-decoration:none; font-weight:700; }
-.service a:hover, .contact a:hover { text-decoration:underline; }
+/* =========================
+   Header / Nav (Dropdowns)
+========================== */
+.site-header{
+  position:sticky; top:0; z-index:1000; background:var(--navy); color:#fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0}
+.brand{
+  color:#fff; text-decoration:none; font-weight:800; letter-spacing:.3px;
+  display:flex; align-items:center; gap:10px; font-size:1.05rem;
+}
+.brand .dot{width:10px; height:10px; background:var(--accent); border-radius:50%}
 
-/* Footer */
-.footer { background:#123a62; color:#cfe1ff; padding:16px 0; font-size:0.9rem; text-align:center; }
+.nav{display:flex; align-items:center; gap:18px}
+.nav-toggle{
+  display:none; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.4);
+  padding:6px 10px; border-radius:8px; font-size:1rem;
+}
 
-/* Responsive */
-@media (max-width: 860px) {
-  .dropdown:hover .dropdown-content { display:none; } /* disable hover reveal on touch */
-  .nav { display:none; flex-direction:column; align-items:flex-start; gap:10px; background:#0f3156; position:absolute; right:20px; top:58px; padding:12px; border-radius:10px; }
-  .nav-toggle { display:inline-block; }
-  .dropdown .dropbtn { width:100%; text-align:left; }
-  .dropdown-content { position:static; box-shadow:none; background:transparent; display:block; padding-left:10px; }
-  .dropdown-content a { color:#fff; padding:6px 0; }
+.dropdown{position:relative}
+.dropbtn{
+  background:transparent; color:#fff; border:none; padding:8px 10px; cursor:pointer; border-radius:8px;
+  font-weight:700; letter-spacing:.2px;
+}
+.dropbtn:hover{background:rgba(255,255,255,.12)}
+.dropdown-content{
+  position:absolute; top:100%; left:0; min-width:220px; display:none; overflow:hidden;
+  background:#fff; border-radius:12px; box-shadow:var(--shadow);
+}
+.dropdown:hover .dropdown-content{display:block}
+.dropdown-content a{
+  display:block; padding:11px 14px; color:var(--navy); text-decoration:none; font-weight:700;
+}
+.dropdown-content a:hover{background:#eef3fa}
+
+/* =========================
+   Hero
+========================== */
+.hero{
+  background:
+    linear-gradient( to bottom right, rgba(18,46,77,.92), rgba(18,46,77,.78) ),
+    url('https://indotechgroup.in/wp-content/uploads/2023/09/AV18-3.jpg') center/cover no-repeat;
+  color:#fff;
+}
+.hero-inner{padding:84px 0; text-align:center}
+.hero h1{margin:0 0 10px; font-size: clamp(1.6rem, 3.6vw, 2.6rem)}
+.hero p{margin:0 0 18px; opacity:.96}
+.cta{
+  display:inline-block; background:var(--accent); color:#000; font-weight:800;
+  text-decoration:none; padding:12px 18px; border-radius:10px;
+  transition: transform .15s ease, filter .15s ease;
+}
+.cta:hover{transform:translateY(-1px); filter:brightness(.97)}
+
+/* =========================
+   Toolbar (Search + Filters)
+========================== */
+.toolbar{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:18px;
+}
+.search{
+  display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line);
+  border-radius:10px; padding:8px 10px; box-shadow:0 2px 8px rgba(0,0,0,.04);
+  flex:1 1 260px;
+}
+.search input{
+  border:none; outline:none; width:100%; font-size:1rem; color:var(--ink);
+}
+.filters{display:flex; flex-wrap:wrap; gap:8px}
+.chip{
+  border:1px solid var(--line); background:#fff; color:var(--ink);
+  padding:7px 12px; border-radius:999px; cursor:pointer; user-select:none; font-weight:700;
+}
+.chip.active{background:var(--navy); color:#fff; border-color:transparent}
+
+/* =========================
+   Product Grid / Cards
+========================== */
+.grid{
+  display:grid; gap:18px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.card{
+  background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
+.card img{aspect-ratio:3/2; object-fit:cover; background:#e9eef6}
+.card-body{padding:14px 16px 18px}
+.card-body h3{margin:6px 0 10px; color:var(--navy); font-size:1.05rem}
+.specs{list-style:none; padding:0; margin:0; color:var(--ink-2); font-size:.96rem}
+.specs li{padding:7px 0; border-top:1px dashed var(--line)}
+.specs li:first-child{border-top:none}
+
+/* =========================
+   Service / Contact / Footer
+========================== */
+.service p, .contact p{font-size:1.05rem; color:var(--ink-2)}
+.service a, .contact a{color:var(--link); font-weight:800; text-decoration:none}
+.service a:hover, .contact a:hover{text-decoration:underline}
+.footer{background:var(--navy); color:#cfe1ff; text-align:center; padding:18px 0; font-size:.92rem}
+
+/* =========================
+   Mobile Nav
+========================== */
+@media (max-width: 900px){
+  .dropdown:hover .dropdown-content{display:none} /* disable hover on touch */
+  .nav{display:none; position:absolute; right:20px; top:60px; background:var(--navy-2); border-radius:12px; padding:12px; flex-direction:column; gap:8px; min-width:220px}
+  .nav.open{display:flex}
+  .nav-toggle{display:inline-block}
+  .dropbtn{width:100%; text-align:left}
+  .dropdown-content{position:static; background:transparent; box-shadow:none; display:block}
+  .dropdown-content a{color:#fff; padding:8px 4px}
+}
