@@ -1,145 +1,271 @@
-/* =========================
-   Brand + Base
-========================== */
+/* ================================
+   Accu-Tech Sawing Solutions
+   styles.css (Part 1/3)
+   Palette inspired by Indotech’s new scheme:
+   Slate/Dark Gray + Rich Gray + Accent Blue/Teal
+================================== */
+
+/* CSS Reset (lean) */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* Theme tokens */
 :root{
-  --navy:#122e4d;
-  --navy-2:#0f2a44;
-  --ink:#1b2430;
-  --ink-2:#2e3b4a;
-  --cloud:#f6f8fb;
-  --card:#ffffff;
-  --line:#e7edf6;
-  --accent:#f0c000;
-  --link:#0c64d6;
-  --shadow: 0 8px 24px rgba(18,46,77,.12);
-  --shadow-lg: 0 14px 36px rgba(18,46,77,.18);
+  --bg:#0f1115;                /* site bg (very dark gray) */
+  --panel:#111827;             /* header/footer */
+  --card:#0f172a;              /* deep slate panel */
+  --card-2:#111825;            /* subtle variant */
+  --ink:#e5e7eb;               /* light text */
+  --ink-dim:#aeb7c4;           /* muted text */
+  --muted:#9aa8bb;             /* placeholders/lines */
+  --line:#1f2a3a;              /* soft borders */
+  --brand:#00a6a6;             /* teal/green accent */
+  --brand-2:#21c3bb;           /* brighter accent */
+  --accent:#3b82f6;            /* blue accent */
+  --danger:#ef4444;
+
   --radius:14px;
+  --radius-sm:10px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --shadow-sm:0 6px 18px rgba(0,0,0,.28);
+
+  --fw-regular:400;
+  --fw-medium:600;
+  --fw-bold:800;
+
+  --max:1200px;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* Base typography */
 body{
-  margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
-  color:var(--ink); background:var(--cloud);
+  background:linear-gradient(180deg,#0b0d11 0%, #0f1115 100%);
+  color:var(--ink);
+  font:400 16px/1.55 "Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  letter-spacing:.15px;
 }
-img{max-width:100%; display:block}
-.container{max-width:1200px; margin:0 auto; padding:0 20px}
-.section{padding:52px 0}
-.section h2{margin:0 0 16px; color:var(--navy); font-size: clamp(1.4rem, 3vw, 2rem)}
-.lead{margin:0 0 22px; color:var(--ink-2)}
+h1,h2,h3,h4{margin:0 0 .35em}
+h1{font-size: clamp(28px, 3.4vw, 44px);line-height:1.1;font-weight:800}
+h2{font-size: clamp(22px, 2.6vw, 32px);font-weight:800}
+h3{font-size: clamp(18px, 1.9vw, 22px);font-weight:700}
+p{margin:.65em 0}
+.lead{color:var(--ink-dim)}
 
-/* =========================
-   Header / Nav (Dropdowns)
-========================== */
-.site-header{
-  position:sticky; top:0; z-index:1000; background:var(--navy); color:#fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,.15);
-}
-.header-inner{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0}
-.brand{
-  color:#fff; text-decoration:none; font-weight:800; letter-spacing:.3px;
-  display:flex; align-items:center; gap:10px; font-size:1.05rem;
-}
-.brand .dot{width:10px; height:10px; background:var(--accent); border-radius:50%}
+.container{max-width:var(--max);margin:auto;padding:0 20px}
+.section{padding:56px 0}
+.section--creative{position:relative;overflow:hidden}
 
-.nav{display:flex; align-items:center; gap:18px}
-.nav-toggle{
-  display:none; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.4);
-  padding:6px 10px; border-radius:8px; font-size:1rem;
+/* Buttons & chips */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:12px 18px;border-radius:999px;
+  text-decoration:none;border:1px solid transparent;
+  font-weight:700;letter-spacing:.3px;cursor:pointer;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+  will-change:transform;
 }
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{
+  background:linear-gradient(90deg,var(--brand),var(--accent));
+  color:white;box-shadow:var(--shadow-sm);
+}
+.btn.ghost{
+  background:transparent;border-color:rgba(255,255,255,.18);
+  color:var(--ink);
+}
+.chip{
+  background:#0b1325;border:1px solid var(--line);color:var(--ink);
+  padding:8px 14px;border-radius:999px;font-weight:700;cursor:pointer;
+}
+.chip.active,.chip:hover{border-color:var(--brand);box-shadow:0 0 0 2px rgba(33,195,187,.25) inset}
 
+/* Header */
+.site-header{position:sticky;top:0;z-index:40;background:rgba(17,24,39,.92);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.brand{font-weight:800;display:inline-flex;align-items:center;gap:.6rem;text-decoration:none}
+.logo-dot{width:12px;height:12px;border-radius:50%;display:inline-block;background:radial-gradient(circle at 30% 30%, #c0fff8, var(--brand));box-shadow:0 0 0 4px rgba(33,195,187,.18),0 0 24px rgba(33,195,187,.5)}
+
+.nav{display:flex;align-items:center;gap:12px}
+.nav.open{display:flex}
+.nav-toggle{display:none;background:#0b1325;border:1px solid var(--line);color:var(--ink);padding:8px 10px;border-radius:8px}
+
+/* Dropdowns */
 .dropdown{position:relative}
 .dropbtn{
-  background:transparent; color:#fff; border:none; padding:8px 10px; cursor:pointer; border-radius:8px;
-  font-weight:700; letter-spacing:.2px;
+  border:1px solid rgba(255,255,255,.08);background:#0b1325;color:var(--ink);
+  padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700
 }
-.dropbtn:hover{background:rgba(255,255,255,.12)}
 .dropdown-content{
-  position:absolute; top:100%; left:0; min-width:220px; display:none; overflow:hidden;
-  background:#fff; border-radius:12px; box-shadow:var(--shadow);
+  position:absolute;top:calc(100% + 8px);right:0;min-width:220px;
+  background:#0c1222;border:1px solid var(--line);border-radius:12px;
+  padding:8px;display:none;box-shadow:var(--shadow)
 }
 .dropdown:hover .dropdown-content{display:block}
 .dropdown-content a{
-  display:block; padding:11px 14px; color:var(--navy); text-decoration:none; font-weight:700;
+  display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--ink);
 }
-.dropdown-content a:hover{background:#eef3fa}
+.dropdown-content a:hover{background:#0b1325}
 
-/* =========================
-   Hero
-========================== */
-.hero{
-  background:
-    linear-gradient( to bottom right, rgba(18,46,77,.92), rgba(18,46,77,.78) ),
-    url('https://indotechgroup.in/wp-content/uploads/2023/09/AV18-3.jpg') center/cover no-repeat;
-  color:#fff;
+/* Hero */
+.hero{padding:72px 0;background:
+  radial-gradient(1200px 500px at 80% -10%, rgba(59,130,246,.18), transparent 60%),
+  radial-gradient(1000px 500px at 10% 10%, rgba(33,195,187,.15), transparent 55%)
 }
-.hero-inner{padding:84px 0; text-align:center}
-.hero h1{margin:0 0 10px; font-size: clamp(1.6rem, 3.6vw, 2.6rem)}
-.hero p{margin:0 0 18px; opacity:.96}
-.cta{
-  display:inline-block; background:var(--accent); color:#000; font-weight:800;
-  text-decoration:none; padding:12px 18px; border-radius:10px;
-  transition: transform .15s ease, filter .15s ease;
-}
-.cta:hover{transform:translateY(-1px); filter:brightness(.97)}
+.hero-inner{display:grid;gap:16px}
+.hero-sub{color:var(--ink-dim)}
+.hero .fx{position:absolute;opacity:.35}
+.fx-top-right{top:-18px;right:-40px;width:480px}
 
-/* =========================
-   Toolbar (Search + Filters)
-========================== */
+/* Toolbar */
 .toolbar{
-  display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:18px;
+  margin:18px 0 10px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between
 }
 .search{
-  display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line);
-  border-radius:10px; padding:8px 10px; box-shadow:0 2px 8px rgba(0,0,0,.04);
-  flex:1 1 260px;
+  display:flex;align-items:center;gap:8px;background:#0b1325;border:1px solid var(--line);
+  padding:10px 12px;border-radius:12px;min-width:260px;max-width:420px;flex:1
 }
 .search input{
-  border:none; outline:none; width:100%; font-size:1rem; color:var(--ink);
+  background:transparent;border:none;outline:none;color:var(--ink);width:100%;font:inherit
 }
-.filters{display:flex; flex-wrap:wrap; gap:8px}
-.chip{
-  border:1px solid var(--line); background:#fff; color:var(--ink);
-  padding:7px 12px; border-radius:999px; cursor:pointer; user-select:none; font-weight:700;
-}
-.chip.active{background:var(--navy); color:#fff; border-color:transparent}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
 
-/* =========================
-   Product Grid / Cards
-========================== */
+/* Grid & Cards */
 .grid{
-  display:grid; gap:18px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-top:18px;
+  display:grid;gap:18px;
+  grid-template-columns:repeat(12,1fr)
 }
+@media (max-width:1100px){.grid{grid-template-columns:repeat(8,1fr)}}
+@media (max-width:720px){.grid{grid-template-columns:repeat(4,1fr)}}
+
 .card{
-  background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
-  transition:transform .18s ease, box-shadow .18s ease;
+  grid-column:span 4;
+  background:linear-gradient(180deg,var(--card),var(--card-2));
+  border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .2s ease, box-shadow .2s ease;
 }
-.card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
-.card img{aspect-ratio:3/2; object-fit:cover; background:#e9eef6}
-.card-body{padding:14px 16px 18px}
-.card-body h3{margin:6px 0 10px; color:var(--navy); font-size:1.05rem}
-.specs{list-style:none; padding:0; margin:0; color:var(--ink-2); font-size:.96rem}
-.specs li{padding:7px 0; border-top:1px dashed var(--line)}
-.specs li:first-child{border-top:none}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card-link{display:block;color:inherit;text-decoration:none}
+.card img{height:190px;object-fit:cover;background:#0a0f1b}
+.card-body{padding:14px}
+.card h3{margin-bottom:6px}
+.specs{margin:0;padding-left:18px;color:var(--ink-dim)}
 
-/* =========================
-   Service / Contact / Footer
-========================== */
-.service p, .contact p{font-size:1.05rem; color:var(--ink-2)}
-.service a, .contact a{color:var(--link); font-weight:800; text-decoration:none}
-.service a:hover, .contact a:hover{text-decoration:underline}
-.footer{background:var(--navy); color:#cfe1ff; text-align:center; padding:18px 0; font-size:.92rem}
+/* ================================
+   styles.css (Part 2/3)
+   Product details + sections
+================================== */
 
-/* =========================
-   Mobile Nav
-========================== */
-@media (max-width: 900px){
-  .dropdown:hover .dropdown-content{display:none} /* disable hover on touch */
-  .nav{display:none; position:absolute; right:20px; top:60px; background:var(--navy-2); border-radius:12px; padding:12px; flex-direction:column; gap:8px; min-width:220px}
+/* Product details view */
+#details-root[hidden]{display:none}
+.product-detail{padding:56px 0;background:
+  radial-gradient(1200px 500px at 15% -10%, rgba(33,195,187,.13), transparent 60%),
+  radial-gradient(900px 500px at 95% 20%, rgba(59,130,246,.12), transparent 55%)
+}
+.detail-head{
+  display:grid;grid-template-columns:420px 1fr;gap:24px;align-items:start
+}
+.detail-head img{
+  border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);background:#0a0f1b
+}
+.detail-meta h1{margin-bottom:10px}
+.backlink{display:inline-block;margin-bottom:14px;color:var(--brand-2);text-decoration:none;font-weight:800}
+.backlink:hover{text-decoration:underline}
+
+.desc-box{
+  background:#e5e7eb; /* gray with black text per your request */
+  color:#0b0f17;
+  border-radius:14px;padding:14px;border:1px solid #d0d6df
+}
+.desc-box h4{margin:0 0 6px;color:#0b0f17}
+
+/* Spec toggle + panel */
+.spec-toggle{
+  margin-top:14px
+}
+.spec-panel{
+  margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0b1325
+}
+.spec-panel[hidden]{display:none}
+.spec-panel table{width:100%;border-collapse:collapse}
+.spec-panel th,.spec-panel td{
+  padding:12px 14px;border-bottom:1px solid #122036;font-size:15px
+}
+.spec-panel th{width:220px;color:#b8c2d2;font-weight:700;text-align:left;background:#0c1529}
+.spec-panel tr:last-child td,.spec-panel tr:last-child th{border-bottom:none}
+
+/* Sections: service & contact */
+.service{padding:56px 0;background:
+  radial-gradient(800px 400px at 0% 0%, rgba(33,195,187,.12), transparent 58%),
+  radial-gradient(800px 400px at 100% 100%, rgba(59,130,246,.12), transparent 58%)
+}
+.contact .container p{margin:.35em 0}
+
+/* Footer */
+.footer{padding:18px 0;background:var(--panel);border-top:1px solid rgba(255,255,255,.06);color:var(--ink-dim);text-align:center}
+
+/* Utility */
+.muted{color:var(--ink-dim)}
+.btn.spec-toggle{
+  background:transparent;border-color:rgba(255,255,255,.18);color:var(--ink);font-weight:800
+}
+.btn.spec-toggle:hover{border-color:var(--brand-2)}
+
+/* ================================
+   styles.css (Part 3/3)
+   Motion + responsive
+================================== */
+
+/* Outline FX SVGs placed in sections */
+.fx{pointer-events:none}
+.fx-mid-left{position:absolute;left:-30px;top:40%;width:420px;opacity:.35}
+
+/* Fancy hover shine for cards */
+.card{
+  position:relative;overflow:hidden;isolation:isolate
+}
+.card::after{
+  content:"";position:absolute;inset:-40% -140% auto auto;transform:rotate(18deg);
+  width:60%;height:200%;background:linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
+  opacity:0;transition:opacity .25s ease, transform .25s ease;z-index:0
+}
+.card:hover::after{opacity:1;transform:rotate(18deg) translateX(-10%)}
+
+/* Dropdown on mobile becomes full width menu */
+@media (max-width:860px){
+  .nav{display:none;position:absolute;right:12px;top:60px;background:#0c1222;border:1px solid var(--line);border-radius:12px;padding:10px;flex-direction:column;gap:10px;min-width:220px}
   .nav.open{display:flex}
-  .nav-toggle{display:inline-block}
-  .dropbtn{width:100%; text-align:left}
-  .dropdown-content{position:static; background:transparent; box-shadow:none; display:block}
-  .dropdown-content a{color:#fff; padding:8px 4px}
+  .nav-toggle{display:inline-flex}
+  .dropdown:hover .dropdown-content{display:none} /* disable hover open on mobile */
+  .dropdown .dropdown-content{position:static;display:block;border:none;background:transparent;box-shadow:none;padding:0}
+  .dropbtn{width:100%;text-align:left}
+}
+
+/* Detail layout responsive */
+@media (max-width:980px){
+  .detail-head{grid-template-columns:1fr}
+  .detail-head img{max-width:620px;justify-self:center}
+}
+
+/* Make chips wrap nicely on smaller screens */
+@media (max-width:600px){
+  .search{min-width:unset;flex:1 1 100%}
+  .filters{gap:6px}
+  .chip{padding:8px 12px}
+}
+
+/* Subtle focus styles for accessibility */
+:focus-visible{outline:2px dashed var(--brand-2);outline-offset:2px}
+
+/* Tables on very narrow phones */
+@media (max-width:420px){
+  .spec-panel th{width:38%}
+  .spec-panel th,.spec-panel td{padding:10px}
+}
+
+/* Image placeholders (if a photo missing) */
+.card img,.detail-head img{
+  background:
+    linear-gradient(90deg, #0a0f1b 0%, #0b1325 60%, #0a0f1b 100%);
 }
