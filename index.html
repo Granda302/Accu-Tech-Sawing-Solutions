@@ -4,171 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accu-Tech Sawing Solutions</title>
-  <meta name="description" content="Accu-Tech Sawing Solutions — Sales, installation, preventative maintenance, and service for Indotech bandsaws." />
-  <style>
-    /* =========================
-       Brand + Base
-    ========================== */
-    :root{
-      --navy:#122e4d;
-      --navy-2:#0f2a44;
-      --ink:#1b2430;
-      --ink-2:#2e3b4a;
-      --cloud:#f6f8fb;
-      --card:#ffffff;
-      --line:#e7edf6;
-      --accent:#f0c000; /* warm gold CTA */
-      --accent-2:#ffb800;
-      --link:#0c64d6;
-      --success:#22a06b;
-      --shadow: 0 8px 24px rgba(18,46,77,.12);
-      --shadow-lg: 0 14px 36px rgba(18,46,77,.18);
-      --radius:14px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
-      color:var(--ink); background:var(--cloud);
-    }
-    img{max-width:100%; display:block}
-
-    .container{max-width:1200px; margin:0 auto; padding:0 20px}
-
-    /* =========================
-       Header / Nav (Dropdowns)
-    ========================== */
-    .site-header{
-      position:sticky; top:0; z-index:1000; background:var(--navy); color:#fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,.15);
-    }
-    .header-inner{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0}
-    .brand{
-      color:#fff; text-decoration:none; font-weight:800; letter-spacing:.3px;
-      display:flex; align-items:center; gap:10px; font-size:1.05rem;
-    }
-    .brand .dot{width:10px; height:10px; background:var(--accent); border-radius:50%}
-
-    .nav{display:flex; align-items:center; gap:18px}
-    .nav-toggle{
-      display:none; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.4);
-      padding:6px 10px; border-radius:8px; font-size:1rem;
-    }
-
-    .dropdown{position:relative}
-    .dropbtn{
-      background:transparent; color:#fff; border:none; padding:8px 10px; cursor:pointer; border-radius:8px;
-      font-weight:700; letter-spacing:.2px;
-    }
-    .dropbtn:hover{background:rgba(255,255,255,.12)}
-    .dropdown-content{
-      position:absolute; top:100%; left:0; min-width:220px; display:none; overflow:hidden;
-      background:#fff; border-radius:12px; box-shadow:var(--shadow);
-    }
-    .dropdown:hover .dropdown-content{display:block}
-    .dropdown-content a{
-      display:block; padding:11px 14px; color:var(--navy); text-decoration:none; font-weight:700;
-    }
-    .dropdown-content a:hover{background:#eef3fa}
-
-    /* =========================
-       Hero
-    ========================== */
-    .hero{
-      background:
-        linear-gradient( to bottom right, rgba(18,46,77,.92), rgba(18,46,77,.78) ),
-        url('https://indotechgroup.in/wp-content/uploads/2023/09/AV18-3.jpg') center/cover no-repeat;
-      color:#fff;
-    }
-    .hero-inner{padding:84px 0; text-align:center}
-    .hero h1{margin:0 0 10px; font-size: clamp(1.6rem, 3.6vw, 2.6rem)}
-    .hero p{margin:0 0 18px; opacity:.96}
-    .cta{
-      display:inline-block; background:var(--accent); color:#000; font-weight:800;
-      text-decoration:none; padding:12px 18px; border-radius:10px;
-      transition: transform .15s ease, filter .15s ease;
-    }
-    .cta:hover{transform:translateY(-1px); filter:brightness(.97)}
-
-    /* =========================
-       Sections
-    ========================== */
-    .section{padding:52px 0}
-    .section h2{margin:0 0 16px; color:var(--navy); font-size: clamp(1.4rem, 3vw, 2rem)}
-    .lead{margin:0 0 22px; color:var(--ink-2)}
-
-    /* =========================
-       Toolbar (Search + Filters)
-    ========================== */
-    .toolbar{
-      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:18px;
-    }
-    .search{
-      display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line);
-      border-radius:10px; padding:8px 10px; box-shadow:0 2px 8px rgba(0,0,0,.04);
-      flex:1 1 260px;
-    }
-    .search input{
-      border:none; outline:none; width:100%; font-size:1rem; color:var(--ink);
-    }
-    .filters{display:flex; flex-wrap:wrap; gap:8px}
-    .chip{
-      border:1px solid var(--line); background:#fff; color:var(--ink);
-      padding:7px 12px; border-radius:999px; cursor:pointer; user-select:none; font-weight:700;
-    }
-    .chip.active{background:var(--navy); color:#fff; border-color:transparent}
-
-    /* =========================
-       Product Grid / Cards
-    ========================== */
-    .grid{
-      display:grid; gap:18px;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-    .card{
-      background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
-    .card img{aspect-ratio:3/2; object-fit:cover; background:#e9eef6}
-    .card-body{padding:14px 16px 18px}
-    .card-body h3{margin:6px 0 10px; color:var(--navy); font-size:1.05rem}
-    .specs{list-style:none; padding:0; margin:0; color:var(--ink-2); font-size:.96rem}
-    .specs li{padding:7px 0; border-top:1px dashed var(--line)}
-    .specs li:first-child{border-top:none}
-
-    /* =========================
-       Service / Contact / Footer
-    ========================== */
-    .service p, .contact p{font-size:1.05rem; color:var(--ink-2)}
-    .service a, .contact a{color:var(--link); font-weight:800; text-decoration:none}
-    .service a:hover, .contact a:hover{text-decoration:underline}
-
-    .footer{background:var(--navy); color:#cfe1ff; text-align:center; padding:18px 0; font-size:.92rem}
-
-    /* =========================
-       Mobile Nav
-    ========================== */
-    @media (max-width: 900px){
-      .dropdown:hover .dropdown-content{display:none} /* disable hover on touch */
-      .nav{display:none; position:absolute; right:20px; top:60px; background:var(--navy-2); border-radius:12px; padding:12px; flex-direction:column; gap:8px; min-width:220px}
-      .nav.open{display:flex}
-      .nav-toggle{display:inline-block}
-      .dropbtn{width:100%; text-align:left}
-      .dropdown-content{position:static; background:transparent; box-shadow:none; display:block}
-      .dropdown-content a{color:#fff; padding:8px 4px}
-    }
-  </style>
+  <meta name="description" content="Accu-Tech Sawing Solutions — Automatic Indotech bandsaws: sales, installation, preventative maintenance, and service." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- =========================
-       HEADER (with Dropdowns)
+       HEADER
   ========================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Accu-Tech Sawing Solutions">
-        <span class="dot" aria-hidden="true"></span> Accu-Tech Sawing Solutions
+      <a class="brand" href="#top" aria-label="Accu-Tech home">
+        <span class="logo-dot" aria-hidden="true"></span>
+        Accu-Tech Sawing Solutions
       </a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
       <nav class="nav" aria-label="Main">
@@ -197,23 +44,31 @@
   <!-- =========================
        HERO
   ========================== -->
-  <section id="top" class="hero">
+  <section id="top" class="hero section--creative">
     <div class="container hero-inner">
-      <h1>Precision Metal Cutting with Indotech Bandsaws</h1>
-      <p>Sales • Installation • Preventative Maintenance • Support</p>
-      <a class="cta" href="#products">Browse Products</a>
+      <h1>Automatic Bandsaws for Precision & Throughput</h1>
+      <p class="hero-sub">LMGA automatic horizontals, verticals, miters, and plate saws — sales • installation • preventative maintenance.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#products">Browse Products</a>
+        <a class="btn ghost" href="#service">Service &amp; PM</a>
+      </div>
     </div>
+    <!-- Decorative outline effect -->
+    <svg class="fx fx-top-right" viewBox="0 0 600 220" aria-hidden="true">
+      <path d="M10,110 C120,20 480,20 590,110 C480,200 120,200 10,110 Z" fill="none" stroke="rgba(0,0,0,.55)" stroke-width="2"/>
+      <path d="M60,110 L540,110" fill="none" stroke="rgba(0,0,0,.55)" stroke-dasharray="4 6"/>
+    </svg>
   </section>
 
   <!-- =========================
-       PRODUCTS (visible immediately)
+       PRODUCTS
   ========================== -->
   <section id="products" class="section products">
     <div class="container">
       <h2>Products</h2>
-      <p class="lead">All models shown with images and key specs (mm + inches where available). Use the search and filters to narrow down.</p>
+      <p class="lead">Filter by category or search. Click a model to see a description and reveal its spec sheet.</p>
 
-      <!-- Toolbar -->
+      <!-- Filter/Search Toolbar -->
       <div class="toolbar">
         <div class="search" role="search">
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#9aa8bb" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5 1.49-1.49-5-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z"/></svg>
@@ -223,166 +78,404 @@
           <button class="chip active" data-filter="all">All</button>
           <button class="chip" data-filter="horizontal">Horizontal</button>
           <button class="chip" data-filter="vertical">Vertical</button>
-          <button class="chip" data-filter="cnc">Enclosed/CNC</button>
-          <button class="chip" data-filter="spm">SPM</button>
+          <button class="chip" data-filter="miter">Miter</button>
+          <button class="chip" data-filter="plate-saw">Plate Saw</button>
         </div>
       </div>
 
-      <!-- Grid -->
+      <!-- ====== Product Grid (cards show photos immediately) ====== -->
       <div id="productGrid" class="grid">
-
-        <!-- 360 LMGA / LMGS (E) -->
-        <article class="card" data-tags="horizontal cnc 360 lmga lmgs">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-360-lmga-rf.jpg" alt="ITM 360 LMGA / LMGS bandsaw">
-          <div class="card-body">
-            <h3>ITM 360 LMGA / LMGS (E)</h3>
-            <ul class="specs">
-              <li>Cutting Capacity: 360×360 mm (14.17×14.17″) / Ø360 mm (Ø14.17″)</li>
-              <li>Blade: 5250×41×1.3 mm (206.69×1.61×0.05″)</li>
-              <li>Tension: Hydraulic • Drive: ~7.5 hp</li>
-              <li>Note: LMGA auto-indexing; enclosed CNC (E) variant</li>
-            </ul>
-          </div>
+        <!-- HORIZONTAL (LMGA only) -->
+        <article class="card" id="itm-210" data-tags="horizontal lmga 210">
+          <a class="card-link" href="#itm-210-detail">
+            <img src="images/itm-210-lmga.jpg" alt="ITM 210 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 210 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 210×210 mm (8.27×8.27″) / Ø210 (8.27″)</li>
+                <li>Speed: 20–100 m/min (65.6–328.1 fpm)</li>
+                <li>Blade: 4000×27×0.9 mm (157.48×1.06×0.04″)</li>
+                <li>Motors: 3 hp • Hyd 1 hp • Cool 0.16 hp</li>
+                <li>Weight: 1550 kg / 3,417 lb</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- 415 LMGA / LMGS -->
-        <article class="card" data-tags="horizontal 415 lmga lmgs">
-          <img src="https://bandsawmachineblog.wordpress.com/2017/08/10/double-column-bandsaw-415-lmgalmgs/featured-image.jpg" alt="ITM 415 LMGA / LMGS bandsaw">
-          <div class="card-body">
-            <h3>ITM 415 LMGA / LMGS</h3>
-            <ul class="specs">
-              <li>Cutting Capacity: 415×415 mm (16.34×16.34″) / Ø415 mm (Ø16.34″)</li>
-              <li>Blade: 5500×41×1.3 mm (216.54×1.61×0.05″)</li>
-              <li>Tension: Hydraulic • Drive: ~7.5 hp</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-300" data-tags="horizontal lmga 300">
+          <a class="card-link" href="#itm-300-detail">
+            <img src="images/itm-300-lmga.jpg" alt="ITM 300 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 300 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 300×300 mm (11.81×11.81″) / Ø300 (11.81″)</li>
+                <li>Speed: 20–100 m/min (65.6–328.1 fpm)</li>
+                <li>Blade: 4400×34×1.1 mm (173.23×1.34×0.04″)</li>
+                <li>Motors: 5 hp • Hyd 1 hp • Cool 0.16 hp</li>
+                <li>Weight: 1700 kg / 3,748 lb</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- 520 LMGA / LMGS -->
-        <article class="card" data-tags="horizontal 520 lmga lmgs">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-520-lmga-rf.jpg" alt="ITM 520 LMGA / LMGS bandsaw">
-          <div class="card-body">
-            <h3>ITM 520 LMGA / LMGS</h3>
-            <ul class="specs">
-              <li>Cutting Capacity: 520×520 mm (20.47×20.47″) / Ø520 mm (Ø20.47″)</li>
-              <li>Blade: ~6650×41×1.3 mm (~261.8×1.61×0.05″)</li>
-              <li>Speed: ~20–100 m/min (65.6–328 fpm)</li>
-              <li>Drive: 7.5–10 hp • Hydraulic: 2 hp • Coolant: 0.16 hp</li>
-              <li>Reservoir ~80 L • Wt: LMGA ~3800 kg / LMGS ~3100 kg</li>
-              <li>Dim: 3500×2150×2200 mm (137.8×84.6×86.6″)</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-360" data-tags="horizontal lmga 360">
+          <a class="card-link" href="#itm-360-detail">
+            <img src="images/itm-360-lmga.jpg" alt="ITM 360 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 360 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 360×360 mm (14.17×14.17″) / Ø360 (14.17″)</li>
+                <li>Speed: 20–100 m/min (65.6–328.1 fpm)</li>
+                <li>Blade: 5250×41×1.3 mm (206.69×1.61×0.051″)</li>
+                <li>Motors: ~7.5 hp • Hyd ~1 hp • Cool 0.16 hp</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- 550 LMGA / LMGS -->
-        <article class="card" data-tags="horizontal 550 lmga lmgs">
-          <img src="https://via.placeholder.com/900x600?text=ITM+550+LMGA+%2F+LMGS" alt="ITM 550 LMGA / LMGS bandsaw">
-          <div class="card-body">
-            <h3>ITM 550 LMGA / LMGS</h3>
-            <ul class="specs">
-              <li>Cutting Capacity: 550×550 mm (21.65×21.65″) / Ø550 mm (Ø21.65″)</li>
-              <li>Blade: 8030×54×1.6 mm (316.93×2.13×0.06″)</li>
-              <li>Speed: ~20–80 m/min (65.6–262.4 fpm)</li>
-              <li>Drive: 12.5 hp • Hydraulic: 2 hp • Coolant: 0.25 hp</li>
-              <li>Reservoir 80 L • Wt: LMGA ~6100 kg / LMGS ~5300 kg</li>
-              <li>Dim: 4200×2200×2500 mm (165.35×86.61×98.43″)</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-415" data-tags="horizontal lmga 415">
+          <a class="card-link" href="#itm-415-detail">
+            <img src="images/itm-415-lmga.jpg" alt="ITM 415 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 415 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 415×415 mm (16.34×16.34″) / Ø415 (16.34″)</li>
+                <li>Blade: 5500×41×1.3 mm (216.54×1.61×0.051″)</li>
+                <li>Motors: ~7.5 hp</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- 650 LMGA / LMGS -->
-        <article class="card" data-tags="horizontal 650 lmga lmgs">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-650-lmga-rf.jpg" alt="ITM 650 LMGA / LMGS bandsaw">
-          <div class="card-body">
-            <h3>ITM 650 LMGA / LMGS</h3>
-            <ul class="specs">
-              <li>Cutting Capacity: 650×650 mm (25.59×25.59″) / Ø650 mm (Ø25.59″)</li>
-              <li>Blade: 8200×67×1.6 mm (322.83×2.64×0.06″)</li>
-              <li>Speed: ~20–80 m/min (65.6–262.4 fpm)</li>
-              <li>Drive: 12.5 hp • Hydraulic: 2 hp • Coolant: 0.25 hp</li>
-              <li>Reservoir 100 L • Wt: LMGA ~6400 kg / LMGS ~5500 kg</li>
-              <li>Dim: 4450×2200×2600 mm (175.20×86.61×102.36″)</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-460" data-tags="horizontal lmga 460">
+          <a class="card-link" href="#itm-460-detail">
+            <img src="images/itm-460-lmga.jpg" alt="ITM 460 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 460 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 460×460 mm (18.11×18.11″) / Ø460 (18.11″)</li>
+                <li>Speed: 20–100 m/min (65.6–328.1 fpm)</li>
+                <li>Blade: 5800×41×1.3 mm (228.35×1.61×0.051″)</li>
+                <li>Motors: 7.5 hp • Hyd 2 hp • Cool 0.16 hp</li>
+                <li>Weight: 2,900 kg / 6,393 lb</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- 725 LMGS (PRO) -->
-        <article class="card" data-tags="horizontal 725 lmgs">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/itm-725-lmgs-pro.jpg" alt="ITM 725 LMGS (PRO)">
-          <div class="card-body">
-            <h3>ITM 725 LMGS (PRO)</h3>
-            <ul class="specs">
-              <li>Semi-automatic; precision ball screw + servo arm feed</li>
-              <li>Heavy-duty dovetail movable & auto-adjustable blade guide</li>
-              <li>Moving vice for long/heavy jobs</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-520" data-tags="horizontal lmga 520">
+          <a class="card-link" href="#itm-520-detail">
+            <img src="images/itm-520-lmga.jpg" alt="ITM 520 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 520 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 520×520 mm (20.47×20.47″) / Ø520 (20.47″)</li>
+                <li>Speed: 20–100 m/min (65.6–328.1 fpm)</li>
+                <li>Blade: ≈6650×41×1.3 mm (≈261.8×1.61×0.051″)</li>
+                <li>Motors: 7.5–10 hp • Hyd 2 hp • Cool 0.16 hp</li>
+                <li>Weight: 3800 kg / 8,378 lb</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- SPM 460V (SERVO) -->
-        <article class="card" data-tags="vertical spm 460">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/spm-460-v-servo.jpg" alt="SPM 460V (SERVO) vertical">
-          <div class="card-body">
-            <h3>SPM 460V (SERVO)</h3>
-            <ul class="specs">
-              <li>Automatic cylinder-head cutting vertical machine</li>
-              <li>Dual hydraulic work tables • minimal cycle time</li>
-              <li>Servo indexing via precision ball screw</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-550" data-tags="horizontal lmga 550">
+          <a class="card-link" href="#itm-550-detail">
+            <img src="images/itm-550-lmga.jpg" alt="ITM 550 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 550 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 550×550 mm (21.65×21.65″) / Ø550 (21.65″)</li>
+                <li>Speed: 20–80 m/min (65.6–262.5 fpm)</li>
+                <li>Blade: 8030×54×1.6 mm (316.93×2.13×0.063″)</li>
+                <li>Motors: 12.5 hp • Hyd 2 hp • Cool 0.25 hp</li>
+                <li>Weight: 6100 kg / 13,448 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+        
+                <article class="card" id="itm-650" data-tags="horizontal lmga 650">
+          <a class="card-link" href="#itm-650-detail">
+            <img src="images/itm-650-lmga.jpg" alt="ITM 650 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 650 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 650×650 mm (25.59×25.59″) / Ø650 (25.59″)</li>
+                <li>Speed: 20–80 m/min (65.6–262.5 fpm)</li>
+                <li>Blade: 8200×67×1.6 mm (322.83×2.64×0.063″)</li>
+                <li>Motors: 12.5 hp • Hyd 2 hp • Cool 0.25 hp</li>
+                <li>Weight: 6400 kg / 14,110 lb</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- 460 SPM (SERVO) -->
-        <article class="card" data-tags="spm 460">
-          <img src="https://indotechgroup.in/wp-content/uploads/2023/09/460-spm-servo.jpg" alt="460 SPM (SERVO)">
-          <div class="card-body">
-            <h3>460 SPM (SERVO)</h3>
-            <ul class="specs">
-              <li>Automatic aluminum cylinder head/riser cutting</li>
-              <li>Hydraulic multi-point clamping fixtures</li>
-              <li>Work table auto-feed via ball screw + servo drive</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-850" data-tags="horizontal lmga 850">
+          <a class="card-link" href="#itm-850-detail">
+            <img src="images/itm-850-lmga.jpg" alt="ITM 850 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 850 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 850×850 mm (33.46×33.46″) / Ø850 (33.46″)</li>
+                <li>Speed: 20–80 m/min (65.6–262.5 fpm)</li>
+                <li>Blade: 9215×67×1.6 mm (362.80×2.64×0.063″)</li>
+                <li>Motors: 12.5/15 hp • Hyd 2 hp • Cool 0.25 hp</li>
+                <li>Weight: 7500 kg / 16,535 lb</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- 850 LMGA / LMGS (placeholder image) -->
-        <article class="card" data-tags="horizontal 850 lmga lmgs">
-          <img src="https://via.placeholder.com/900x600?text=ITM+850+LMGA+%2F+LMGS" alt="ITM 850 LMGA / LMGS">
-          <div class="card-body">
-            <h3>ITM 850 LMGA / LMGS</h3>
-            <ul class="specs">
-              <li>Large-format dual-column band saw (LMGA auto-index / LMGS semi-auto)</li>
-              <li>High-power drive & hydraulic system • heavy-section capacity</li>
-              <li>(Swap this image URL with your product photo when available)</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-1050" data-tags="horizontal lmga 1050">
+          <a class="card-link" href="#itm-1050-detail">
+            <img src="images/itm-1050-lmga.jpg" alt="ITM 1050 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 1050 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 1050×1050 mm (41.34×41.34″) / Ø1050 (41.34″)</li>
+                <li>Speed: 20–80 m/min (65.6–262.5 fpm)</li>
+                <li>Blade: 10650×67/80×1.6 mm (419.29×2.64/3.15×0.063″)</li>
+                <li>Motors: 15/20 hp • Hyd 3 hp • Cool 0.25 hp</li>
+                <li>Weight: 9750 kg / 21,495 lb</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-        <!-- 1050 LMGA / LMGS (placeholder image) -->
-        <article class="card" data-tags="horizontal 1050 lmga lmgs">
-          <img src="https://via.placeholder.com/900x600?text=ITM+1050+LMGA+%2F+LMGS" alt="ITM 1050 LMGA / LMGS">
-          <div class="card-body">
-            <h3>ITM 1050 LMGA / LMGS</h3>
-            <ul class="specs">
-              <li>Extra-large dual-column saw for heavy sections</li>
-              <li>LMGA auto-index shuttle • LMGS semi-auto operation</li>
-              <li>(Swap this image URL with your product photo when available)</li>
-            </ul>
-          </div>
+        <article class="card" id="itm-1250" data-tags="horizontal lmga 1250">
+          <a class="card-link" href="#itm-1250-detail">
+            <img src="images/itm-1250-lmga.jpg" alt="ITM 1250 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 1250 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 1250×1250 mm (49.21×49.21″) / Ø1250 (49.21″)</li>
+                <li>Speed: 20–80 m/min (65.6–262.5 fpm)</li>
+                <li>Blade: 12000×67/80×1.6 mm (472.44×2.64/3.15×0.063″)</li>
+                <li>Motors: 20 hp • Hyd 3 hp • Cool 0.33 hp</li>
+                <li>Weight: 15500 kg / 34,172 lb</li>
+              </ul>
+            </div>
+          </a>
         </article>
 
-      </div>
+        <article class="card" id="itm-1500" data-tags="horizontal lmga 1500">
+          <a class="card-link" href="#itm-1500-detail">
+            <img src="images/itm-1500-lmga.jpg" alt="ITM 1500 LMGA automatic bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 1500 LMGA</h3>
+              <ul class="specs">
+                <li>Capacity: 1500×1500 mm (59.06×59.06″) / Ø1500 (59.06″)</li>
+                <li>Speed: 20–80 m/min (65.6–262.5 fpm)</li>
+                <li>Blade: 13840×67/80×1.6 mm (544.88×2.64/3.15×0.063″)</li>
+                <li>Motors: 20 hp • Hyd 3 hp • Cool 0.33 hp</li>
+                <li>Weight: 17500 kg / 38,581 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- MITER (I-series) -->
+        <article class="card" id="i-300a" data-tags="miter">
+          <a class="card-link" href="#i-300a-detail">
+            <img src="images/i-300a.jpg" alt="I 300 (A) miter bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>I 300 (A)</h3>
+              <ul class="specs">
+                <li>@0°: 300×300 • @45°: 275×300 • @60°: 175×300</li>
+                <li>Ø: 300 / 275 / 175 mm (inches on detail)</li>
+                <li>Speed: 65.6–328.1 fpm • Blade: 4860×34×1.1</li>
+                <li>Weight: 1600 kg / 3,527 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="i-600x440a" data-tags="miter">
+          <a class="card-link" href="#i-600x440a-detail">
+            <img src="images/i-600x440a.jpg" alt="I 600×440 (A) miter bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>I 600×440 (A)</h3>
+              <ul class="specs">
+                <li>@0°: 600×440 • @45°: 400×440 • @60°: 250×440</li>
+                <li>Speed: 65.6–328.1 fpm • Blade: 7200×41×1.3</li>
+                <li>Weight: 3200 kg / 7,055 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="i-750x550a" data-tags="miter">
+          <a class="card-link" href="#i-750x550a-detail">
+            <img src="images/i-750x550a.jpg" alt="I 750×550 (A) miter bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>I 750×550 (A)</h3>
+              <ul class="specs">
+                <li>@0°: 750×550 • @45°: 480×500 • @60°: 330×480</li>
+                <li>Speed: 65.6–328.1 fpm • Blade: 7500×41×1.3</li>
+                <li>Weight: 3500 kg / 7,716 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="i-1300x1300" data-tags="miter">
+          <a class="card-link" href="#i-1300x1300-detail">
+            <img src="images/i-1300x1300.jpg" alt="I 1300×1300 miter bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>I 1300×1300</h3>
+              <ul class="specs">
+                <li>@0°: 1300×1300 • @45°: 820×1300 • @60°: 570×1300</li>
+                <li>Speed: 65.6–328.1 fpm • Blade: 13400×54/67×1.6</li>
+                <li>Weight: 7100 kg / 15,653 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- VERTICAL -->
+        <article class="card" id="itm-100v3-m" data-tags="vertical">
+          <a class="card-link" href="#itm-100v3-m-detail">
+            <img src="images/itm-100-v3-m.jpg" alt="ITM-100 V3 (M) vertical bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM-100 V3 (M)</h3>
+              <ul class="specs">
+                <li>Height 100 • Throat 300 • Fixed table</li>
+                <li>Blade: 3000×27×0.9 • 65.6–328.1 fpm</li>
+                <li>Weight: 900 kg / 1,984 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="itm-100v3-h" data-tags="vertical">
+          <a class="card-link" href="#itm-100v3-h-detail">
+            <img src="images/itm-100-v3-h.jpg" alt="ITM-100 V3 (H) vertical bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM-100 V3 (H)</h3>
+              <ul class="specs">
+                <li>Height 100 • Throat 300 • Hydraulic table</li>
+                <li>Blade: 3000×27×0.9 • 65.6–328.1 fpm</li>
+                <li>Weight: 1500 kg / 3,307 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="itm-200v3-m" data-tags="vertical">
+          <a class="card-link" href="#itm-200v3-m-detail">
+            <img src="images/itm-200-v3-m.jpg" alt="ITM-200 V3 (M) vertical bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM-200 V3 (M)</h3>
+              <ul class="specs">
+                <li>Height 200 • Throat 600 • Fixed table</li>
+                <li>Blade: 4860×34×1.1 • 65.6–328.1 fpm</li>
+                <li>Weight: 1850 kg / 4,079 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="itm-200v3-h" data-tags="vertical">
+          <a class="card-link" href="#itm-200v3-h-detail">
+            <img src="images/itm-200-v3-h.jpg" alt="ITM-200 V3 (H) vertical bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM-200 V3 (H)</h3>
+              <ul class="specs">
+                <li>Height 200 • Throat 600 • Hydraulic table</li>
+                <li>Blade: 4860×34×1.1 • 65.6–328.1 fpm</li>
+                <li>Weight: 2400 kg / 5,291 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="itm-300v3-m" data-tags="vertical">
+          <a class="card-link" href="#itm-300v3-m-detail">
+            <img src="images/itm-300-v3-m.jpg" alt="ITM-300 V3 (M) vertical bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM-300 V3 (M)</h3>
+              <ul class="specs">
+                <li>Height 300 • Throat 900 • Fixed table</li>
+                <li>Blade: 6300×41×1.3 • 65.6–328.1 fpm</li>
+                <li>Weight: 2800 kg / 6,173 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="itm-300v3-h" data-tags="vertical">
+          <a class="card-link" href="#itm-300v3-h-detail">
+            <img src="images/itm-300-v3-h.jpg" alt="ITM-300 V3 (H) vertical bandsaw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM-300 V3 (H)</h3>
+              <ul class="specs">
+                <li>Height 300 • Throat 900 • Hydraulic table</li>
+                <li>Blade: 6300×41×1.3 • 65.6–328.1 fpm</li>
+                <li>Weight: 3800 kg / 8,378 lb</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- PLATE SAW (also Vertical) -->
+        <article class="card" id="itm-600-vbs" data-tags="plate-saw vertical">
+          <a class="card-link" href="#itm-600-vbs-detail">
+            <img src="images/itm-600-vbs.jpg" alt="ITM 600 VBS plate/vertical saw" loading="lazy">
+            <div class="card-body">
+              <h3>ITM 600 VBS</h3>
+              <ul class="specs">
+                <li>Plate saw (vertical). Full specifications coming soon.</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <!-- SPECIAL PURPOSE (previous SPM units re-tagged) -->
+        <article class="card" id="spm-460" data-tags="horizontal special">
+          <a class="card-link" href="#spm-460-detail">
+            <img src="images/spm-460-servo.jpg" alt="460 SPM automatic cutting machine" loading="lazy">
+            <div class="card-body">
+              <h3>460 SPM (SERVO)</h3>
+              <ul class="specs">
+                <li>Automatic aluminum cylinder head/riser cutting</li>
+                <li>Servo indexing, hydraulic multi-point clamping</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card" id="spm-460v" data-tags="vertical special">
+          <a class="card-link" href="#spm-460v-detail">
+            <img src="images/spm-460v-servo.jpg" alt="SPM 460V vertical cutting machine" loading="lazy">
+            <div class="card-body">
+              <h3>SPM 460V (SERVO)</h3>
+              <ul class="specs">
+                <li>Vertical cylinder-head cutting, minimal cycle time</li>
+                <li>Servo indexing via precision ball screw</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+      </div><!-- /grid -->
     </div>
   </section>
-
-  <!-- =========================
+  
+    <!-- =========================
        SERVICE
   ========================== -->
-  <section id="service" class="section service">
+  <section id="service" class="section service section--creative">
     <div class="container">
       <h2>Service</h2>
-      <p><strong>Accu-Tech Sawing Solutions provides full fledged bandsaw service.</strong> This includes preventative maintenance and installation. Contact <a href="tel:13315756241">331-575-6241</a> to get scheduled.</p>
+      <div class="desc-box">
+        <h4>Field Service, PM, and Installations</h4>
+        <p><strong>Accu-Tech Sawing Solutions provides full-fledged bandsaw service.</strong> This includes preventative maintenance and installation. Contact <a href="tel:13315756241">331-575-6241</a> to get scheduled.</p>
+      </div>
     </div>
+    <svg class="fx fx-mid-left" viewBox="0 0 500 160" aria-hidden="true">
+      <path d="M10,80 Q120,10 250,80 T490,80" fill="none" stroke="rgba(0,0,0,.55)" stroke-width="2" />
+      <line x1="20" y1="80" x2="480" y2="80" stroke="rgba(0,0,0,.55)" stroke-dasharray="6 8"/>
+    </svg>
   </section>
 
   <!-- =========================
@@ -400,49 +493,211 @@
        FOOTER
   ========================== -->
   <footer class="footer">
-    <div class="container">© <span id="y"></span> Accu-Tech Sawing Solutions</div>
+    <div class="container">© <span id="year"></span> Accu-Tech Sawing Solutions</div>
   </footer>
 
+  <!-- =========================
+       DETAIL VIEWS
+  ========================== -->
+  <main id="details-root" hidden>
+
+    <!-- HORIZONTAL DETAILS -->
+    <section id="itm-210-detail" class="product-detail">
+      <div class="container">
+        <a class="backlink" href="#products">← Back to all products</a>
+        <div class="detail-head">
+          <img src="images/itm-210-lmga.jpg" alt="ITM 210 LMGA">
+          <div class="detail-meta">
+            <h1>ITM 210 LMGA</h1>
+            <div class="desc-box">
+              <h4>Why this saw stands out</h4>
+              <p>Entry LMGA automatic with dual-column rigidity, auto-index shuttle, hydraulic blade tension, and wide vices for repeatable cuts on bar and tube.</p>
+            </div>
+            <button class="btn spec-toggle" data-target="#spec-itm210">Spec sheet for ITM 210 LMGA</button>
+            <div id="spec-itm210" class="spec-panel" hidden>
+              <table>
+                <tr><th>Capacity</th><td>210×210 mm (8.27×8.27″) / Ø210 (8.27″)</td></tr>
+                <tr><th>Speed</th><td>20–100 m/min (65.6–328.1 fpm)</td></tr>
+                <tr><th>Blade</th><td>4000×27×0.9 mm (157.48×1.06×0.04″)</td></tr>
+                <tr><th>Motors</th><td>3 hp • Hyd 1 hp • Cool 0.16 hp</td></tr>
+                <tr><th>Weight</th><td>1550 kg / 3,417 lb</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="itm-300-detail" class="product-detail">
+      <div class="container">
+        <a class="backlink" href="#products">← Back</a>
+        <div class="detail-head">
+          <img src="images/itm-300-lmga.jpg" alt="ITM 300 LMGA">
+          <div class="detail-meta">
+            <h1>ITM 300 LMGA</h1>
+            <div class="desc-box">
+              <h4>Why this saw stands out</h4>
+              <p>Auto-indexing shuttle with roller support, rigid dual-column frame, planetary gearbox, and hydraulic blade tension for accurate production cutting.</p>
+            </div>
+            <button class="btn spec-toggle" data-target="#spec-itm300">Spec sheet for ITM 300 LMGA</button>
+            <div id="spec-itm300" class="spec-panel" hidden>
+              <table>
+                <tr><th>Capacity</th><td>300×300 mm (11.81×11.81″) / Ø300 (11.81″)</td></tr>
+                <tr><th>Speed</th><td>20–100 m/min (65.6–328.1 fpm)</td></tr>
+                <tr><th>Blade</th><td>4400×34×1.1 mm (173.23×1.34×0.04″)</td></tr>
+                <tr><th>Motors</th><td>5 hp • Hyd 1 hp • Cool 0.16 hp</td></tr>
+                <tr><th>Weight</th><td>1700 kg / 3,748 lb</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="itm-360-detail" class="product-detail">
+      <div class="container">
+        <a class="backlink" href="#products">← Back</a>
+        <div class="detail-head">
+          <img src="images/itm-360-lmga.jpg" alt="ITM 360 LMGA">
+          <div class="detail-meta">
+            <h1>ITM 360 LMGA</h1>
+            <div class="desc-box">
+              <h4>Why this saw stands out</h4>
+              <p>Precision throughput with optional servo indexing and ball-screw arm feed. Auto-adjust blade guides and linear ways keep the blade true.</p>
+            </div>
+            <button class="btn spec-toggle" data-target="#spec-itm360">Spec sheet for ITM 360 LMGA</button>
+            <div id="spec-itm360" class="spec-panel" hidden>
+              <table>
+                <tr><th>Capacity</th><td>360×360 (14.17×14.17″) / Ø360</td></tr>
+                <tr><th>Speed</th><td>20–100 m/min (65.6–328.1 fpm)</td></tr>
+                <tr><th>Blade</th><td>5250×41×1.3 (206.69×1.61×0.051″)</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 415, 460, 520, 550, 650, 850, 1050, 1250, 1500 (similar pattern, abbreviated to keep under limits) -->
+    <section id="itm-415-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-415-lmga.jpg" alt="ITM 415 LMGA"><div class="detail-meta"><h1>ITM 415 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Reinforced column bed and long blade support hold tight tolerances; automatic shuttle indexing for predictable cycles.</p></div><button class="btn spec-toggle" data-target="#spec-itm415">Spec sheet for ITM 415 LMGA</button><div id="spec-itm415" class="spec-panel" hidden><table><tr><th>Capacity</th><td>415×415 mm • Ø415</td></tr><tr><th>Blade</th><td>5500×41×1.3</td></tr></table></div></div></div></div></section>
+
+    <section id="itm-460-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-460-lmga.jpg" alt="ITM 460 LMGA"><div class="detail-meta"><h1>ITM 460 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Hydraulic tension, servo indexing, and LM guides keep cuts straight under load—great for service centers.</p></div><button class="btn spec-toggle" data-target="#spec-itm460">Spec sheet for ITM 460 LMGA</button><div id="spec-itm460" class="spec-panel" hidden><table><tr><th>Capacity</th><td>460×460 • Ø460</td></tr><tr><th>Speed</th><td>20–100 m/min (65.6–328.1 fpm)</td></tr><tr><th>Blade</th><td>5800×41×1.3</td></tr><tr><th>Weight</th><td>2,900 kg / 6,393 lb</td></tr></table></div></div></div></div></section>
+
+    <section id="itm-520-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-520-lmga.jpg" alt="ITM 520 LMGA"><div class="detail-meta"><h1>ITM 520 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Production automation with extra throat; long-stroke shuttle reduces handling.</p></div><button class="btn spec-toggle" data-target="#spec-itm520">Spec sheet for ITM 520 LMGA</button><div id="spec-itm520" class="spec-panel" hidden><table><tr><th>Capacity</th><td>520×520 • Ø520</td></tr><tr><th>Blade</th><td>~6650×41×1.3</td></tr></table></div></div></div></div></section>
+
+    <section id="itm-550-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-550-lmga.jpg" alt="ITM 550 LMGA"><div class="detail-meta"><h1>ITM 550 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>54–67 mm blade package with reinforced carriage delivers clean faces in tough alloys.</p></div><button class="btn spec-toggle" data-target="#spec-itm550">Spec sheet for ITM 550 LMGA</button><div id="spec-itm550" class="spec-panel" hidden><table><tr><th>Capacity</th><td>550×550 • Ø550</td></tr><tr><th>Speed</th><td>20–80 m/min</td></tr><tr><th>Blade</th><td>8030×54×1.6</td></tr></table></div></div></div></div></section>
+
+    <section id="itm-650-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-650-lmga.jpg" alt="ITM 650 LMGA"><div class="detail-meta"><h1>ITM 650 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Dual-column rigidity + linear ways for straight tracking on heavy sections.</p></div><button class="btn spec-toggle" data-target="#spec-itm650">Spec sheet for ITM 650 LMGA</button><div id="spec-itm650" class="spec-panel" hidden><table><tr><th>Capacity</th><td>650×650 • Ø650</td></tr><tr><th>Blade</th><td>8200×67×1.6</td></tr></table></div></div></div></div></section>
+
+    <section id="itm-850-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-850-lmga.jpg" alt="ITM 850 LMGA"><div class="detail-meta"><h1>ITM 850 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>High-capacity automatic with optional transfer integration and wide vices.</p></div><button class="btn spec-toggle" data-target="#spec-itm850">Spec sheet for ITM 850 LMGA</button><div id="spec-itm850" class="spec-panel" hidden><table><tr><th>Capacity</th><td>850×850 • Ø850</td></tr><tr><th>Blade</th><td>9215×67×1.6</td></tr></table></div></div></div></div></section>
+
+    <section id="itm-1050-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-1050-lmga.jpg" alt="ITM 1050 LMGA"><div class="detail-meta"><h1>ITM 1050 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Large-format capacity with 67/80 mm blade range and clear HMI control.</p></div><button class="btn spec-toggle" data-target="#spec-itm1050">Spec sheet for ITM 1050 LMGA</button><div id="spec-itm1050" class="spec-panel" hidden><table><tr><th>Capacity</th><td>1050×1050 • Ø1050</td></tr><tr><th>Blade</th><td>10650×67/80×1.6</td></tr></table></div></div></div></div></section>
+
+    <section id="itm-1250-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-1250-lmga.jpg" alt="ITM 1250 LMGA"><div class="detail-meta"><h1>ITM 1250 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Reinforced columns and high-hp drive hold speed under heavy load.</p></div><button class="btn spec-toggle" data-target="#spec-itm1250">Spec sheet for ITM 1250 LMGA</button><div id="spec-itm1250" class="spec-panel" hidden><table><tr><th>Capacity</th><td>1250×1250 • Ø1250</td></tr><tr><th>Blade</th><td>12000×67/80×1.6</td></tr></table></div></div></div></div></section>
+
+    <section id="itm-1500-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-1500-lmga.jpg" alt="ITM 1500 LMGA"><div class="detail-meta"><h1>ITM 1500 LMGA</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Extreme capacity; oversized columns and 80 mm blade compatibility protect the cut line.</p></div><button class="btn spec-toggle" data-target="#spec-itm1500">Spec sheet for ITM 1500 LMGA</button><div id="spec-itm1500" class="spec-panel" hidden><table><tr><th>Capacity</th><td>1500×1500 • Ø1500</td></tr><tr><th>Blade</th><td>13840×67/80×1.6</td></tr></table></div></div></div></div></section>
+
+    <!-- MITER DETAILS (I-series) -->
+    <section id="i-300a-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/i-300a.jpg" alt="I 300 (A)"><div class="detail-meta"><h1>I 300 (A)</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Motorized arm rotation and PLC/HMI control for fast, precise miters; dual-side clamping stabilizes structural shapes.</p></div><button class="btn spec-toggle" data-target="#spec-i300a">Spec sheet for I 300 (A)</button><div id="spec-i300a" class="spec-panel" hidden><table><tr><th>@0°/@45°/@60°</th><td>300×300 / 275×300 / 175×300 • Ø300/275/175</td></tr><tr><th>Blade</th><td>4860×34×1.1</td></tr><tr><th>Speed</th><td>20–100 m/min</td></tr><tr><th>Weight</th><td>1600 kg / 3,527 lb</td></tr></table></div></div></div></div></section>
+
+    <section id="i-600x440a-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/i-600x440a.jpg" alt="I 600×440 (A)"><div class="detail-meta"><h1>I 600×440 (A)</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>HMI-driven mitering with long automatic indexing to reduce handling between cuts.</p></div><button class="btn spec-toggle" data-target="#spec-i600">Spec sheet for I 600×440 (A)</button><div id="spec-i600" class="spec-panel" hidden><table><tr><th>@0°/@45°/@60°</th><td>600×440 • 400×440 • 250×440</td></tr><tr><th>Blade</th><td>7200×41×1.3</td></tr><tr><th>Speed</th><td>20–100 m/min</td></tr><tr><th>Weight</th><td>3200 kg / 7,055 lb</td></tr></table></div></div></div></div></section>
+
+    <section id="i-750x550a-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/i-750x550a.jpg" alt="I 750×550 (A)"><div class="detail-meta"><h1>I 750×550 (A)</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Reinforced head and linear ways keep geometry accurate at large angles for beams and thick-wall tube.</p></div><button class="btn spec-toggle" data-target="#spec-i750">Spec sheet for I 750×550 (A)</button><div id="spec-i750" class="spec-panel" hidden><table><tr><th>@0°/@45°/@60°</th><td>750×550 • 480×500 • 330×480</td></tr><tr><th>Blade</th><td>7500×41×1.3</td></tr><tr><th>Speed</th><td>20–100 m/min</td></tr><tr><th>Weight</th><td>3500 kg / 7,716 lb</td></tr></table></div></div></div></div></section>
+
+    <section id="i-1300x1300-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/i-1300x1300.jpg" alt="I 1300×1300"><div class="detail-meta"><h1>I 1300×1300</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Large miter capacity with stable guides and robust clamping for structural steel and large profiles.</p></div><button class="btn spec-toggle" data-target="#spec-i1300">Spec sheet for I 1300×1300</button><div id="spec-i1300" class="spec-panel" hidden><table><tr><th>@0°/@45°/@60°</th><td>1300×1300 • 820×1300 • 570×1300</td></tr><tr><th>Blade</th><td>13400×54/67×1.6</td></tr><tr><th>Speed</th><td>20–100 m/min</td></tr><tr><th>Weight</th><td>7100 kg / 15,653 lb</td></tr></table></div></div></div></div></section>
+
+    <!-- VERTICAL / PLATE DETAIL (samples) -->
+    <section id="itm-600-vbs-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/itm-600-vbs.jpg" alt="ITM 600 VBS"><div class="detail-meta"><h1>ITM 600 VBS</h1><div class="desc-box"><h4>Why this saw stands out</h4><p>Vertical plate saw designed for flat stock and blocks; optimized for stability and surface finish. Full spec sheet coming soon.</p></div><button class="btn spec-toggle" data-target="#spec-vbs600">Spec sheet for ITM 600 VBS</button><div id="spec-vbs600" class="spec-panel" hidden><p>Specifications will be published shortly.</p></div></div></div></div></section>
+
+    <section id="spm-460-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/spm-460-servo.jpg" alt="460 SPM"><div class="detail-meta"><h1>460 SPM (SERVO)</h1><div class="desc-box"><h4>Why this machine stands out</h4><p>Purpose-built for aluminum cylinder heads/risers with hydraulic multi-point clamping and servo indexing for short cycles.</p></div></div></div></div></section>
+
+    <section id="spm-460v-detail" class="product-detail"><div class="container"><a class="backlink" href="#products">← Back</a><div class="detail-head"><img src="images/spm-460v-servo.jpg" alt="SPM 460V"><div class="detail-meta"><h1>SPM 460V (SERVO)</h1><div class="desc-box"><h4>Why this machine stands out</h4><p>Vertical configuration optimized for rapid cylinder-head cutting with servo indexing via precision ball screw.</p></div></div></div></div></section>
+
+  </main>
+  
+    <!-- =========================
+       SCRIPTS
+  ========================== -->
   <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile nav toggle
-    const toggle = document.querySelector('.nav-toggle');
+    // Mobile nav
+    const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-
-    // Filters + Search
-    const chips = document.querySelectorAll('.chip');
-    const grid  = document.getElementById('productGrid') || document.querySelector('.grid');
-    const cards = Array.from(grid.querySelectorAll('.card'));
-    const searchInput = document.getElementById('searchInput');
-
-    function applyFilters(){
-      const active = document.querySelector('.chip.active')?.dataset.filter || 'all';
-      const term = (searchInput.value || '').trim().toLowerCase();
-
-      cards.forEach(card=>{
-        const tags = (card.dataset.tags || '').toLowerCase();
-        const text = card.innerText.toLowerCase();
-        const matchFilter = active==='all' || tags.includes(active);
-        const matchSearch = term==='' || text.includes(term);
-        card.style.display = (matchFilter && matchSearch) ? '' : 'none';
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
       });
     }
 
-    chips.forEach(ch=>{
-      ch.addEventListener('click', ()=>{
-        chips.forEach(c=>c.classList.remove('active'));
-        ch.classList.add('active');
+    // Product filtering & search
+    const chips = document.querySelectorAll('.chip');
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const input = document.getElementById('searchInput');
+    let activeFilter = 'all', query = '';
+
+    function applyFilters() {
+      const q = query.trim().toLowerCase();
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        const text = card.innerText.toLowerCase();
+        const passFilter = (activeFilter === 'all') || tags.includes(activeFilter);
+        const passSearch = !q || text.includes(q);
+        card.style.display = (passFilter && passSearch) ? '' : 'none';
+      });
+    }
+    chips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        chips.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
         applyFilters();
       });
     });
+    input && input.addEventListener('input', (e) => { query = e.target.value; applyFilters(); });
 
-    searchInput?.addEventListener('input', applyFilters);
+    // Detail routing (hash-based)
+    const detailsRoot = document.getElementById('details-root');
+    function showList() {
+      detailsRoot.hidden = true;
+      document.getElementById('products').style.display = '';
+      document.getElementById('service').style.display = '';
+      document.getElementById('contact').style.display = '';
+      window.scrollTo({ top: 0 });
+    }
+    function showDetail(id) {
+      // hide list sections
+      document.getElementById('products').style.display = 'none';
+      document.getElementById('service').style.display = 'none';
+      document.getElementById('contact').style.display = 'none';
+      detailsRoot.hidden = false;
+      // hide all details then show target
+      detailsRoot.querySelectorAll('.product-detail').forEach(s => s.style.display = 'none');
+      const el = document.getElementById(id);
+      if (el) { el.style.display = ''; window.scrollTo({ top: 0 }); }
+    }
+    function handleHash() {
+      const hash = location.hash.replace('#', '');
+      if (!hash || hash === 'products' || hash === 'top') { showList(); return; }
+      // if it's a detail id, show it
+      if (document.getElementById(hash)) { showDetail(hash); }
+    }
+    window.addEventListener('hashchange', handleHash);
+    window.addEventListener('DOMContentLoaded', handleHash);
+
+    // Spec sheet toggles
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.spec-toggle');
+      if (!btn) return;
+      const target = document.querySelector(btn.dataset.target);
+      if (target) {
+        const isHidden = target.hasAttribute('hidden');
+        if (isHidden) target.removeAttribute('hidden'); else target.setAttribute('hidden', '');
+      }
+    });
   </script>
 </body>
 </html>
